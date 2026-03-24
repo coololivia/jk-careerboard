@@ -1,6 +1,7 @@
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
 import CareerScoreCard from "@/components/CareerScoreCard";
+import SkillGapCard from "@/components/SkillGapCard";
 
 interface Props {
   data: UserData;
@@ -50,24 +51,7 @@ export default function PassiveDashboard({ data }: Props) {
       <CareerScoreCard data={careerScore} userType="passive" />
 
       {/* Skill Gap — 연봉 임팩트 강조 */}
-      <section>
-        <h2 className="mb-3 text-base font-semibold">연봉 올리는 스킬</h2>
-        <div className="flex flex-col gap-3">
-          {(skillGap ?? []).map((skill: any) => (
-            <div key={skill.skill} className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="flex items-center justify-between">
-                <p className="font-semibold text-sm">{skill.skill}</p>
-                {skill.salaryImpact && (
-                  <span className="text-sm font-bold text-green-600">{skill.salaryImpact}</span>
-                )}
-              </div>
-              <p className="mt-1 text-xs text-gray-500">
-                이 스킬 있으면 연봉 {skill.salaryImpact} 올릴 수 있어요
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <SkillGapCard skills={skillGap ?? []} userType="passive" />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
 import CareerScoreCard from "@/components/CareerScoreCard";
+import SkillGapCard from "@/components/SkillGapCard";
 
 interface Props {
   data: UserData;
@@ -54,33 +55,7 @@ export default function NewDashboard({ data }: Props) {
       </section>
 
       {/* Skill Gap */}
-      <section>
-        <h2 className="mb-3 text-base font-semibold">지금 배우면 좋은 스킬</h2>
-        <div className="flex flex-col gap-3">
-          {(skillGap ?? []).map((skill: any) => (
-            <div
-              key={skill.skill}
-              className="rounded-xl border border-gray-200 bg-white p-4"
-            >
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold">{skill.skill}</p>
-                <span className="text-xs font-medium text-blue-600">
-                  +{skill.additionalJobsIfAcquired}개 공고
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-gray-500">
-                이 스킬 채우면 지원 가능 공고 {skill.additionalJobsIfAcquired}개
-                더 생겨요
-              </p>
-              {skill.learningResource && (
-                <p className="mt-2 text-xs text-gray-400">
-                  참고: {skill.learningResource}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+      <SkillGapCard skills={skillGap ?? []} userType="new" />
 
       {/* 맞춤 공고 */}
       <section>

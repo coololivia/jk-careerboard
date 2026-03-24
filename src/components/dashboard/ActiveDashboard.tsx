@@ -1,13 +1,14 @@
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
 import CareerScoreCard from "@/components/CareerScoreCard";
+import SkillGapCard from "@/components/SkillGapCard";
 
 interface Props {
   data: UserData;
 }
 
 export default function ActiveDashboard({ data }: Props) {
-  const { user, activityTracking, matchedJobs, careerScore, careerTimeline } = data as any;
+  const { user, activityTracking, matchedJobs, careerScore, careerTimeline, skillGap } = data as any;
 
   const allColumns = activityTracking?.columns ?? {};
   const reviewing = allColumns.reviewing ?? [];
@@ -110,6 +111,13 @@ export default function ActiveDashboard({ data }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Skill Gap */}
+      <SkillGapCard
+        skills={skillGap ?? []}
+        userType="active"
+        targetJob={user.jobTitle}
+      />
 
       {/* Career Score 인라인 */}
       <CareerScoreCard
