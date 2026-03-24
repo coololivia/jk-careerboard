@@ -1,5 +1,6 @@
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
+import CareerScoreCard from "@/components/CareerScoreCard";
 
 interface Props {
   data: UserData;
@@ -18,27 +19,7 @@ export default function NewDashboard({ data }: Props) {
       </div>
 
       {/* Career Score — 격려 프레이밍 */}
-      <section className="rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 p-4 text-white">
-        <p className="text-xs opacity-80">커리어 스코어</p>
-        <div className="mt-1 flex items-end gap-2">
-          <p className="text-4xl font-bold">{careerScore?.score ?? 0}</p>
-          <p className="mb-1 text-sm opacity-80">/ 100</p>
-        </div>
-        <p className="mt-2 text-sm font-semibold">{careerScore?.message}</p>
-        <div className="mt-3 flex flex-col gap-2">
-          {(careerScore?.nextActions ?? []).map((action: any, i: number) => (
-            <div
-              key={i}
-              className="flex items-center justify-between rounded-lg bg-white/10 px-3 py-2"
-            >
-              <p className="text-xs">{action.action}</p>
-              <span className="text-xs font-bold text-green-300">
-                {action.scoreImpact}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <CareerScoreCard data={careerScore} userType="new" />
 
       {/* 이력서 진행도 */}
       <section className="rounded-xl border border-gray-200 bg-white p-4">

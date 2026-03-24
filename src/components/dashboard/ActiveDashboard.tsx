@@ -1,12 +1,13 @@
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
+import CareerScoreCard from "@/components/CareerScoreCard";
 
 interface Props {
   data: UserData;
 }
 
 export default function ActiveDashboard({ data }: Props) {
-  const { user, activityTracking, matchedJobs, careerScore } = data as any;
+  const { user, activityTracking, matchedJobs, careerScore, careerTimeline } = data as any;
 
   const allColumns = activityTracking?.columns ?? {};
   const reviewing = allColumns.reviewing ?? [];
@@ -111,21 +112,11 @@ export default function ActiveDashboard({ data }: Props) {
       </section>
 
       {/* Career Score 인라인 */}
-      <section className="rounded-xl border border-gray-200 bg-white p-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs text-gray-500">커리어 스코어</p>
-            <p className="text-2xl font-bold">{careerScore?.score ?? "-"}점</p>
-            <p className="text-xs text-gray-500">{careerScore?.marketComparison}</p>
-          </div>
-          <div className="text-right">
-            <span className="text-sm font-semibold text-green-600">
-              ↑ +{careerScore?.trendDelta}점
-            </span>
-            <p className="mt-0.5 text-xs text-gray-400">이번 달</p>
-          </div>
-        </div>
-      </section>
+      <CareerScoreCard
+        data={careerScore}
+        timeline={careerTimeline}
+        userType="active"
+      />
     </div>
   );
 }

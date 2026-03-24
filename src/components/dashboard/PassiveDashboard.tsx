@@ -1,5 +1,6 @@
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
+import CareerScoreCard from "@/components/CareerScoreCard";
 
 interface Props {
   data: UserData;
@@ -46,18 +47,7 @@ export default function PassiveDashboard({ data }: Props) {
       </section>
 
       {/* Career Score — 연봉 비교 한 줄 */}
-      <section className="rounded-xl border border-gray-200 bg-white p-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs text-gray-500">지금 내 시장가치</p>
-            <p className="text-2xl font-bold mt-0.5">{careerScore?.score ?? "-"}점</p>
-          </div>
-          <div className="text-right">
-            <p className="text-sm font-semibold text-orange-500">{careerScore?.salaryVsMarket}</p>
-            <p className="text-xs text-gray-400 mt-0.5">시장 평균 대비</p>
-          </div>
-        </div>
-      </section>
+      <CareerScoreCard data={careerScore} userType="passive" />
 
       {/* Skill Gap — 연봉 임팩트 강조 */}
       <section>
