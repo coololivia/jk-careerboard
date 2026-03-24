@@ -55,7 +55,10 @@
       "salary": "6,500~8,500만원",
       "deadline": "2024-04-03",
       "isUrgent": true,
-      "tags": ["D-10", "재택가능"],
+      "tags": [
+        "D-10",
+        "재택가능"
+      ],
       "isScraped": true
     },
     {
@@ -67,7 +70,9 @@
       "salary": "5,500~7,000만원",
       "deadline": "2024-04-08",
       "isUrgent": false,
-      "tags": ["유연근무"],
+      "tags": [
+        "유연근무"
+      ],
       "isScraped": true
     },
     {
@@ -79,21 +84,80 @@
       "salary": "5,000~6,500만원",
       "deadline": "2024-04-12",
       "isUrgent": false,
-      "tags": ["스톡옵션"],
+      "tags": [
+        "스톡옵션"
+      ],
       "isScraped": false
     }
   ],
   "scrappedJobs": [
-    { "id": "job_101", "scrappedAt": "2024-03-20" },
-    { "id": "job_102", "scrappedAt": "2024-03-18" },
-    { "id": "scrap_001", "company": "당근마켓", "title": "UX 디자이너", "scrappedAt": "2024-03-15" },
-    { "id": "scrap_002", "company": "배민", "title": "프로덕트 디자이너", "scrappedAt": "2024-03-10" },
-    { "id": "scrap_003", "company": "토스", "title": "Product Designer", "scrappedAt": "2024-03-05" }
+    {
+      "id": "job_101",
+      "scrappedAt": "2024-03-20"
+    },
+    {
+      "id": "job_102",
+      "scrappedAt": "2024-03-18"
+    },
+    {
+      "id": "scrap_001",
+      "company": "당근마켓",
+      "title": "UX 디자이너",
+      "scrappedAt": "2024-03-15"
+    },
+    {
+      "id": "scrap_002",
+      "company": "배민",
+      "title": "프로덕트 디자이너",
+      "scrappedAt": "2024-03-10"
+    },
+    {
+      "id": "scrap_003",
+      "company": "토스",
+      "title": "Product Designer",
+      "scrappedAt": "2024-03-05"
+    }
   ],
+  "resumeAiAnalysis": [
+    {
+      "id": "resume_passive_001",
+      "name": "UX Designer_경력",
+      "type": "경력",
+      "createdLabel": "한 달 전 작성",
+      "completeness": 75,
+      "passRate": 68,
+      "tip": "⚡ 포트폴리오 링크 추가하면 합격률UP!"
+    }
+  ],
+  "resumeCount": 2,
   "pushNotificationConsent": false,
   "alertConditions": {
     "targetSalary": "6,000만원 이상",
     "targetCompanySize": "스타트업 ~ 대기업",
     "targetJobType": "UX Designer"
+  },
+  "insight": {
+    "type": "market_salary",
+    "title": "이직 시장 현황",
+    "subtitle": "UX Designer · 경력 6년 기준",
+    "rows": [
+      {
+        "label": "현재 연봉",
+        "value": "6,200만원",
+        "highlight": false
+      },
+      {
+        "label": "시장 평균",
+        "value": "6,800만원",
+        "highlight": false
+      },
+      {
+        "label": "이직 시 예상",
+        "value": "7,500만원",
+        "highlight": true
+      }
+    ],
+    "salaryUpside": "+21%",
+    "nudge": "지금 이직하면 평균 연봉 21% 올릴 수 있어요"
   }
 }

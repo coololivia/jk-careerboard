@@ -18,7 +18,7 @@ const mockDataMap: Record<UserType, UserData> = {
 };
 
 interface PageProps {
-  searchParams: Promise<{ user?: string }>;
+  searchParams: Promise<{ user?: string; tier?: string }>;
 }
 
 export default async function Home({ searchParams }: PageProps) {
@@ -34,35 +34,20 @@ export default async function Home({ searchParams }: PageProps) {
 
   const data = mockDataMap[userType];
 
+  // 휴면 티어: URL ?tier=short|mid|long → daysSinceLastVisit 오버라이드
+  const TIER_DAYS: Record<string, number> = { short: 45, mid: 120, long: 400 };
+  const tierOverride = params.tier && TIER_DAYS[params.tier] !== undefined
+    ? TIER_DAYS[params.tier]
+    : undefined;
+
   return (
     <>
-      {/* 개발용 유저 타입 전환 탭 */}
-      <div className="mb-6 flex gap-1 rounded-[12px] bg-jk-bg-section p-1">
-        {(["active", "new", "passive", "inactive"] as UserType[]).map((type) => (
-          <a
-            key={type}
-            href={`?user=${type}`}
-            className={`flex-1 rounded-[8px] py-1.5 text-center text-xs font-medium transition-colors ${
-              userType === type
-                ? "bg-white text-jk-text-strong shadow-sm"
-                : "text-jk-text-muted hover:text-jk-text-secondary"
-            }`}
-          >
-            {type === "active"
-              ? "적극"
-              : type === "new"
-              ? "신입"
-              : type === "passive"
-              ? "잠재"
-              : "휴면"}
-          </a>
-        ))}
-      </div>
-
       {userType === "active" && <ActiveDashboard data={data} />}
       {userType === "new" && <NewDashboard data={data} />}
       {userType === "passive" && <PassiveDashboard data={data} />}
-      {userType === "inactive" && <InactiveDashboard data={data} />}
+      {userType === "inactive" && (
+        <InactiveDashboard data={data} tierDaysOverride={tierOverride} />
+      )}
     </>
   );
 }

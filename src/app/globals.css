@@ -1,24 +1,33 @@
-@import "tailwindcss";
-
 /* Pretendard 폰트 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 
-/* 잡코리아 디자인 토큰 */
+@import "tailwindcss";
+
+/* 잡코리아 디자인 토큰 — JAMS 2.0 기준 */
 @theme {
-  /* 컬러 */
-  --color-jk-bg: #f6f7f8;
+  /* 배경 */
+  --color-jk-bg: #f3f4f5;
   --color-jk-bg-section: #f1f2f3;
   --color-jk-bg-blue: #f0f2fa;
 
+  /* 텍스트 */
   --color-jk-text-primary: #1a1a1e;
-  --color-jk-text-strong: #0c0c0e;
-  --color-jk-text-secondary: #3a3e46;
-  --color-jk-text-tertiary: #3e434b;
+  --color-jk-text-strong: #1a1a1e;
+  --color-jk-text-secondary: #3e434b;
+  --color-jk-text-tertiary: #575f6c;
   --color-jk-text-muted: #768091;
-  --color-jk-border: #e6e8ea;
+  --color-jk-text-placeholder: #949ba8;
 
-  --color-jk-orange: #ff8a41;
-  --color-jk-orange-light: #fb923c;
+  /* 보더 */
+  --color-jk-border: #d5d8dc;
+
+  /* 브랜드 블루 — JK 메인 컬러 */
+  --color-jk-blue: #1b55f6;
+  --color-jk-blue-hover: #083ccc;
+  --color-jk-blue-dark: #0028ad;
+  --color-jk-blue-light: #e1e7fa;
+
+  /* 기타 */
   --color-jk-purple: #8b5cf6;
 
   --color-white: #ffffff;
@@ -40,6 +49,24 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 페이지 진입 애니메이션 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-page {
+  animation: fadeInUp 0.25s ease-out both;
+}
+
+/* 카드 탭 피드백 */
+.card-tap {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card-tap:active {
+  transform: scale(0.985);
 }
 
 body {

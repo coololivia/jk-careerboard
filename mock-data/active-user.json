@@ -19,6 +19,83 @@
     "onlyBrowsing": false,
     "scrapCount": 8
   },
+  "statsCards": {
+    "resumeScore": {
+      "label": "내 이력서의 합격률 높이세요!",
+      "current": 8,
+      "total": 10
+    },
+    "passedCompanies": {
+      "count": 12,
+      "companyCount": 7
+    },
+    "interviewCount": {
+      "count": 3
+    }
+  },
+  "resumeAiAnalysis": [
+    {
+      "id": "resume_001",
+      "name": "신입 개발자_v1",
+      "type": "신입",
+      "createdLabel": "1주일 전 작성",
+      "completeness": 85,
+      "passRate": 78,
+      "tip": "⚡ 경력 보완하면 합격률UP!"
+    },
+    {
+      "id": "resume_002",
+      "name": "경력 프론트앤드_v2",
+      "type": "경력",
+      "createdLabel": "8/08 작성",
+      "completeness": 80,
+      "passRate": 85,
+      "tip": "👌 자격증 추가하면 매칭률UP!"
+    }
+  ],
+  "resumeCount": 8,
+  "applicationList": [
+    {
+      "id": "app_001",
+      "company": "카카오페이",
+      "status": "지원완료",
+      "appliedAt": "2025.09.04",
+      "resumeName": "백엔드 개발자_제주서",
+      "resumeType": "신입",
+      "location": "성남시 분당구",
+      "actions": ["수정", "보기"]
+    },
+    {
+      "id": "app_002",
+      "company": "네이버",
+      "status": "진행중",
+      "appliedAt": "2025.09.04",
+      "resumeName": "프론트엔드 개발자",
+      "resumeType": "경력",
+      "location": "성남시 분당구",
+      "actions": ["수정", "보기", "재지원"]
+    },
+    {
+      "id": "app_003",
+      "company": "쿠팡",
+      "status": "불합격",
+      "appliedAt": "2025.08.30",
+      "resumeName": "프론트엔드 개발자",
+      "resumeType": "경력",
+      "location": "서울 송파구",
+      "actions": ["보기", "재지원"]
+    },
+    {
+      "id": "app_004",
+      "company": "쿠팡",
+      "status": "진행중",
+      "appliedAt": "2025.08.25",
+      "resumeName": "경력 프론트앤드_v2",
+      "resumeType": "경력",
+      "location": "서울 송파구",
+      "actions": ["수정", "보기", "재지원"]
+    }
+  ],
   "careerScore": {
     "score": 78,
     "percentile": 23,
@@ -36,38 +113,10 @@
     ]
   },
   "careerTimeline": [
-    {
-      "year": "2020",
-      "event": "첫 입사",
-      "company": "스타트업E",
-      "title": "서비스 기획",
-      "score": 32,
-      "highlight": false
-    },
-    {
-      "year": "2021",
-      "event": "이직",
-      "company": "중견기업F",
-      "title": "Product Manager",
-      "score": 51,
-      "highlight": false
-    },
-    {
-      "year": "2022",
-      "event": "승진 · PO 전환",
-      "company": "중견기업F",
-      "title": "Product Owner",
-      "score": 63,
-      "highlight": true
-    },
-    {
-      "year": "2024",
-      "event": "현재 구직 중",
-      "company": null,
-      "title": null,
-      "score": 78,
-      "highlight": true
-    }
+    { "year": "2020", "event": "첫 입사",       "company": "스타트업E", "title": "서비스 기획",    "score": 32, "highlight": false },
+    { "year": "2021", "event": "이직",           "company": "중견기업F", "title": "Product Manager","score": 51, "highlight": false },
+    { "year": "2022", "event": "승진 · PO 전환", "company": "중견기업F", "title": "Product Owner",  "score": 63, "highlight": true  },
+    { "year": "2024", "event": "현재 구직 중",   "company": null,        "title": null,             "score": 78, "highlight": true  }
   ],
   "skillGap": [
     {
@@ -93,7 +142,8 @@
       "salary": "6,000~8,000만원",
       "deadline": "2024-04-05",
       "isUrgent": false,
-      "tags": ["재택가능", "스톡옵션"]
+      "isScraped": false,
+      "tags": ["재택가능", "스톡옵션", "합격패턴"]
     },
     {
       "id": "job_002",
@@ -104,6 +154,7 @@
       "salary": "7,000~9,000만원",
       "deadline": "2024-04-01",
       "isUrgent": true,
+      "isScraped": true,
       "tags": ["D-8", "급구"]
     },
     {
@@ -115,75 +166,21 @@
       "salary": "5,500~7,500만원",
       "deadline": "2024-04-10",
       "isUrgent": false,
+      "isScraped": false,
       "tags": ["성과급"]
-    },
-    {
-      "id": "job_004",
-      "company": "쿠팡",
-      "title": "이커머스 PM",
-      "matchScore": 79,
-      "matchReason": "커머스 도메인 이해도 + 지표 관리 역량",
-      "salary": "6,500~8,500만원",
-      "deadline": "2024-04-15",
-      "isUrgent": false,
-      "tags": ["글로벌"]
     }
   ],
-  "activityTracking": {
-    "columns": {
-      "reviewing": [
-        {
-          "id": "app_001",
-          "company": "라인",
-          "title": "플랫폼 PM",
-          "appliedAt": "2024-03-18",
-          "lastUpdatedAt": "2024-03-22"
-        },
-        {
-          "id": "app_002",
-          "company": "당근마켓",
-          "title": "중고거래 PM",
-          "appliedAt": "2024-03-19",
-          "lastUpdatedAt": "2024-03-21"
-        }
-      ],
-      "interview": [
-        {
-          "id": "app_003",
-          "company": "배달의민족",
-          "title": "O2O 서비스 PM",
-          "appliedAt": "2024-03-10",
-          "interviewDate": "2024-03-27T14:00:00Z",
-          "lastUpdatedAt": "2024-03-20"
-        }
-      ],
-      "passed": [
-        {
-          "id": "app_004",
-          "company": "스타트업A",
-          "title": "그로스 PM",
-          "appliedAt": "2024-03-05",
-          "lastUpdatedAt": "2024-03-18"
-        }
-      ],
-      "failed": [
-        {
-          "id": "app_005",
-          "company": "삼성SDS",
-          "title": "IT 서비스 기획",
-          "appliedAt": "2024-03-01",
-          "lastUpdatedAt": "2024-03-15",
-          "similarJobs": ["job_003", "job_004"]
-        },
-        {
-          "id": "app_006",
-          "company": "SK텔레콤",
-          "title": "디지털 서비스 PM",
-          "appliedAt": "2024-03-03",
-          "lastUpdatedAt": "2024-03-14",
-          "similarJobs": ["job_001", "job_002"]
-        }
-      ]
-    }
+  "insight": {
+    "type": "hiring_pattern",
+    "title": "합격자 인사이트",
+    "subtitle": "Product Manager 합격자 상위 30% 공통점",
+    "items": [
+      { "label": "SQL 또는 데이터 분석 툴 보유",  "stat": "87%", "fulfilled": false },
+      { "label": "사이드 프로젝트 경험 1개 이상",  "stat": "74%", "fulfilled": true  },
+      { "label": "이력서 자기소개 200자 이상",     "stat": "91%", "fulfilled": true  }
+    ],
+    "myMatch": 2,
+    "totalItems": 3,
+    "nudge": "SQL 스킬 추가 시 지원 가능 공고 +14개"
   }
 }

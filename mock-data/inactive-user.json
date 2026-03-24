@@ -19,28 +19,63 @@
     "onlyBrowsing": false,
     "scrapCount": 3
   },
-  "reEngagement": {
-    "headline": "최현우님이 없는 사이 바뀐 것들",
-    "highlights": [
-      {
-        "type": "new_jobs",
-        "message": "백엔드 개발자 신규 공고 147개 올라왔어요",
-        "icon": "briefcase"
-      },
-      {
-        "type": "salary_trend",
-        "message": "Node.js 개발자 평균 연봉이 지난달보다 3% 올랐어요",
-        "icon": "trending-up"
-      },
-      {
-        "type": "scraped_deadline",
-        "message": "스크랩한 공고 1개가 마감 임박이에요",
-        "icon": "clock",
-        "urgentJobId": "job_301"
-      }
-    ],
-    "ctaMessage": "지금 공고 보러 가기",
-    "entryChannel": "kakao_alimtalk"
+  "reEngagementByTier": {
+    "short": {
+      "headline": "최현우님이 없는 사이 바뀐 것들",
+      "highlights": [
+        {
+          "type": "new_jobs",
+          "message": "백엔드 개발자 신규 공고 147개 올라왔어요"
+        },
+        {
+          "type": "salary_trend",
+          "message": "Node.js 개발자 평균 연봉이 지난달보다 3% 올랐어요"
+        },
+        {
+          "type": "scraped_deadline",
+          "message": "스크랩한 공고 1개가 마감 임박이에요"
+        }
+      ],
+      "ctaMessage": "지금 공고 보러 가기"
+    },
+    "mid": {
+      "headline": "시장이 꽤 바뀌었어요",
+      "highlights": [
+        {
+          "type": "salary_trend",
+          "message": "백엔드 개발자 평균 연봉이 이 기간 동안 8% 올랐어요"
+        },
+        {
+          "type": "new_jobs",
+          "message": "AI 관련 백엔드 공고가 2배 이상 늘었어요"
+        },
+        {
+          "type": "resume",
+          "message": "이력서를 마지막으로 수정한 지 오래됐어요. 업데이트 해볼까요?"
+        }
+      ],
+      "ctaMessage": "이력서 업데이트하고 공고 보기",
+      "resumeNudge": true
+    },
+    "long": {
+      "headline": "오랜만이에요. 많이 바뀌었을 거예요",
+      "highlights": [
+        {
+          "type": "market_change",
+          "message": "AI·클라우드 중심으로 백엔드 시장 구조가 크게 바뀌었어요"
+        },
+        {
+          "type": "salary_trend",
+          "message": "백엔드 개발자 평균 연봉이 그동안 22% 올랐어요"
+        },
+        {
+          "type": "resume",
+          "message": "이력서가 많이 오래됐어요. 새로 작성하면 맞춤 공고를 받을 수 있어요"
+        }
+      ],
+      "ctaMessage": "이력서부터 다시 시작하기",
+      "resumeNudge": true
+    }
   },
   "matchedJobs": [
     {
@@ -68,6 +103,7 @@
       "isScraped": false
     }
   ],
+  "resumeCount": 3,
   "scrappedJobs": [
     { "id": "job_301", "scrappedAt": "2024-02-05", "deadline": "2024-03-27" },
     { "id": "scrap_101", "company": "카카오뱅크", "title": "백엔드 개발자", "scrappedAt": "2024-01-20" }
