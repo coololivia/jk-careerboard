@@ -37,15 +37,15 @@ export default async function Home({ searchParams }: PageProps) {
   return (
     <>
       {/* 개발용 유저 타입 전환 탭 */}
-      <div className="mb-6 flex gap-1 rounded-xl bg-gray-100 p-1">
+      <div className="mb-6 flex gap-1 rounded-[12px] bg-jk-bg-section p-1">
         {(["active", "new", "passive", "inactive"] as UserType[]).map((type) => (
           <a
             key={type}
             href={`?user=${type}`}
-            className={`flex-1 rounded-lg py-1.5 text-center text-xs font-medium transition-colors ${
+            className={`flex-1 rounded-[8px] py-1.5 text-center text-xs font-medium transition-colors ${
               userType === type
-                ? "bg-white text-gray-900 shadow-sm"
-                : "text-gray-500 hover:text-gray-700"
+                ? "bg-white text-jk-text-strong shadow-sm"
+                : "text-jk-text-muted hover:text-jk-text-secondary"
             }`}
           >
             {type === "active"

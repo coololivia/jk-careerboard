@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+      <body className="min-h-screen bg-jk-bg text-jk-text-primary antialiased">
         <main className="mx-auto w-full max-w-[390px] px-4 py-6">
           {children}
         </main>
