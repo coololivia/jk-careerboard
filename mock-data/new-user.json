@@ -1,0 +1,101 @@
+{
+  "user": {
+    "id": "user_a_001",
+    "name": "박민서",
+    "type": "new",
+    "jobTitle": null,
+    "targetJobTitle": "프론트엔드 개발자",
+    "yearsOfExperience": 0,
+    "currentCompany": null,
+    "resumeCompleteness": 60,
+    "lastResumeEditedAt": "2024-03-22T15:00:00Z",
+    "lastVisitedAt": "2024-03-24T11:00:00Z"
+  },
+  "behaviorSignals": {
+    "visitFrequency": "occasional",
+    "weeklyVisitCount": 3,
+    "daysSinceLastVisit": 0,
+    "applicationCount": 0,
+    "resumeRecentlyEdited": true,
+    "onlyBrowsing": true,
+    "scrapCount": 2
+  },
+  "careerScore": {
+    "score": 42,
+    "framing": "encouraging",
+    "message": "이렇게 하면 80점 가요",
+    "nextActions": [
+      { "action": "이력서 자기소개 작성", "scoreImpact": "+15점" },
+      { "action": "포트폴리오 링크 추가", "scoreImpact": "+12점" },
+      { "action": "희망 직무 설정", "scoreImpact": "+8점" }
+    ]
+  },
+  "resumeProgress": {
+    "completeness": 60,
+    "missingItems": [
+      { "field": "자기소개서", "label": "자기소개", "required": true },
+      { "field": "portfolio", "label": "포트폴리오 링크", "required": false },
+      { "field": "targetJob", "label": "희망 직무", "required": true }
+    ],
+    "completedItems": [
+      "기본 정보",
+      "학력",
+      "기술 스택",
+      "수상 이력"
+    ]
+  },
+  "skillGap": [
+    {
+      "skill": "React",
+      "currentLevel": "basic",
+      "requiredLevel": "intermediate",
+      "additionalJobsIfAcquired": 23,
+      "learningResource": "React 공식 문서"
+    },
+    {
+      "skill": "TypeScript",
+      "currentLevel": "none",
+      "requiredLevel": "basic",
+      "additionalJobsIfAcquired": 18,
+      "learningResource": "TypeScript 핸드북"
+    },
+    {
+      "skill": "Git / GitHub",
+      "currentLevel": "basic",
+      "requiredLevel": "intermediate",
+      "additionalJobsIfAcquired": 31,
+      "learningResource": "GitHub 가이드"
+    }
+  ],
+  "matchedJobs": [
+    {
+      "id": "job_201",
+      "company": "스타트업B",
+      "title": "주니어 프론트엔드 개발자",
+      "matchScore": 67,
+      "matchReason": "신입 환영 + HTML/CSS/JavaScript 기본 스펙 일치",
+      "salary": "2,800~3,500만원",
+      "deadline": "2024-04-10",
+      "isUrgent": false,
+      "tags": ["신입환영", "교육지원"]
+    },
+    {
+      "id": "job_202",
+      "company": "에이전시C",
+      "title": "웹 퍼블리셔 (신입)",
+      "matchScore": 72,
+      "matchReason": "HTML/CSS 보유 스킬 + 신입 포지션",
+      "salary": "2,600~3,200만원",
+      "deadline": "2024-04-07",
+      "isUrgent": true,
+      "tags": ["신입", "D-14"]
+    }
+  ],
+  "onboarding": {
+    "step": 2,
+    "totalSteps": 5,
+    "completedSteps": ["회원가입", "기본 정보 입력"],
+    "nextStep": "이력서 완성하기",
+    "firstApplicationGoal": "이력서 완성 후 첫 지원까지"
+  }
+}

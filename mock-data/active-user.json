@@ -1,0 +1,147 @@
+{
+  "user": {
+    "id": "user_b_001",
+    "name": "김지훈",
+    "type": "active",
+    "jobTitle": "Product Manager",
+    "yearsOfExperience": 4,
+    "currentCompany": null,
+    "resumeCompleteness": 92,
+    "lastResumeEditedAt": "2024-03-20T10:00:00Z",
+    "lastVisitedAt": "2024-03-24T09:30:00Z"
+  },
+  "behaviorSignals": {
+    "visitFrequency": "daily",
+    "weeklyVisitCount": 6,
+    "daysSinceLastVisit": 0,
+    "applicationCount": 6,
+    "resumeRecentlyEdited": true,
+    "onlyBrowsing": false,
+    "scrapCount": 8
+  },
+  "careerScore": {
+    "score": 78,
+    "percentile": 23,
+    "trend": "up",
+    "trendDelta": 5,
+    "marketComparison": "상위 23%",
+    "salaryVsMarket": "+8%"
+  },
+  "skillGap": [
+    {
+      "skill": "데이터 분석 (SQL)",
+      "currentLevel": "basic",
+      "requiredLevel": "intermediate",
+      "additionalJobsIfAcquired": 14
+    },
+    {
+      "skill": "애자일 / 스크럼 자격증",
+      "currentLevel": "none",
+      "requiredLevel": "basic",
+      "additionalJobsIfAcquired": 9
+    }
+  ],
+  "matchedJobs": [
+    {
+      "id": "job_001",
+      "company": "카카오",
+      "title": "서비스 기획 PM",
+      "matchScore": 91,
+      "matchReason": "4년 PM 경력 + 모바일 서비스 경험 일치",
+      "salary": "6,000~8,000만원",
+      "deadline": "2024-04-05",
+      "isUrgent": false,
+      "tags": ["재택가능", "스톡옵션"]
+    },
+    {
+      "id": "job_002",
+      "company": "토스",
+      "title": "프로덕트 매니저 (금융)",
+      "matchScore": 87,
+      "matchReason": "핀테크 도메인 관심사 + 데이터 기반 의사결정 경험",
+      "salary": "7,000~9,000만원",
+      "deadline": "2024-04-01",
+      "isUrgent": true,
+      "tags": ["D-8", "급구"]
+    },
+    {
+      "id": "job_003",
+      "company": "네이버",
+      "title": "B2B SaaS PM",
+      "matchScore": 83,
+      "matchReason": "B2B 프로덕트 경험 + 협업 툴 사용 이력",
+      "salary": "5,500~7,500만원",
+      "deadline": "2024-04-10",
+      "isUrgent": false,
+      "tags": ["성과급"]
+    },
+    {
+      "id": "job_004",
+      "company": "쿠팡",
+      "title": "이커머스 PM",
+      "matchScore": 79,
+      "matchReason": "커머스 도메인 이해도 + 지표 관리 역량",
+      "salary": "6,500~8,500만원",
+      "deadline": "2024-04-15",
+      "isUrgent": false,
+      "tags": ["글로벌"]
+    }
+  ],
+  "activityTracking": {
+    "columns": {
+      "reviewing": [
+        {
+          "id": "app_001",
+          "company": "라인",
+          "title": "플랫폼 PM",
+          "appliedAt": "2024-03-18",
+          "lastUpdatedAt": "2024-03-22"
+        },
+        {
+          "id": "app_002",
+          "company": "당근마켓",
+          "title": "중고거래 PM",
+          "appliedAt": "2024-03-19",
+          "lastUpdatedAt": "2024-03-21"
+        }
+      ],
+      "interview": [
+        {
+          "id": "app_003",
+          "company": "배달의민족",
+          "title": "O2O 서비스 PM",
+          "appliedAt": "2024-03-10",
+          "interviewDate": "2024-03-27T14:00:00Z",
+          "lastUpdatedAt": "2024-03-20"
+        }
+      ],
+      "passed": [
+        {
+          "id": "app_004",
+          "company": "스타트업A",
+          "title": "그로스 PM",
+          "appliedAt": "2024-03-05",
+          "lastUpdatedAt": "2024-03-18"
+        }
+      ],
+      "failed": [
+        {
+          "id": "app_005",
+          "company": "삼성SDS",
+          "title": "IT 서비스 기획",
+          "appliedAt": "2024-03-01",
+          "lastUpdatedAt": "2024-03-15",
+          "similarJobs": ["job_003", "job_004"]
+        },
+        {
+          "id": "app_006",
+          "company": "SK텔레콤",
+          "title": "디지털 서비스 PM",
+          "appliedAt": "2024-03-03",
+          "lastUpdatedAt": "2024-03-14",
+          "similarJobs": ["job_001", "job_002"]
+        }
+      ]
+    }
+  }
+}

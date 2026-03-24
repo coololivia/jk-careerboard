@@ -1,0 +1,75 @@
+{
+  "user": {
+    "id": "user_d_001",
+    "name": "최현우",
+    "type": "inactive",
+    "jobTitle": "백엔드 개발자",
+    "yearsOfExperience": 3,
+    "currentCompany": null,
+    "resumeCompleteness": 55,
+    "lastResumeEditedAt": "2024-01-15T09:00:00Z",
+    "lastVisitedAt": "2024-02-08T14:30:00Z"
+  },
+  "behaviorSignals": {
+    "visitFrequency": "inactive",
+    "weeklyVisitCount": 0,
+    "daysSinceLastVisit": 45,
+    "applicationCount": 2,
+    "resumeRecentlyEdited": false,
+    "onlyBrowsing": false,
+    "scrapCount": 3
+  },
+  "reEngagement": {
+    "headline": "최현우님이 없는 사이 바뀐 것들",
+    "highlights": [
+      {
+        "type": "new_jobs",
+        "message": "백엔드 개발자 신규 공고 147개 올라왔어요",
+        "icon": "briefcase"
+      },
+      {
+        "type": "salary_trend",
+        "message": "Node.js 개발자 평균 연봉이 지난달보다 3% 올랐어요",
+        "icon": "trending-up"
+      },
+      {
+        "type": "scraped_deadline",
+        "message": "스크랩한 공고 1개가 마감 임박이에요",
+        "icon": "clock",
+        "urgentJobId": "job_301"
+      }
+    ],
+    "ctaMessage": "지금 공고 보러 가기",
+    "entryChannel": "kakao_alimtalk"
+  },
+  "matchedJobs": [
+    {
+      "id": "job_301",
+      "company": "핀다",
+      "title": "백엔드 개발자 (Node.js)",
+      "matchScore": 82,
+      "matchReason": "3년 백엔드 경력 + Node.js 스킬 일치",
+      "salary": "4,500~6,000만원",
+      "deadline": "2024-03-27",
+      "isUrgent": true,
+      "tags": ["D-3", "스크랩한 공고"],
+      "isScraped": true
+    },
+    {
+      "id": "job_302",
+      "company": "스타트업D",
+      "title": "서버 개발자",
+      "matchScore": 76,
+      "matchReason": "경력 3년 + 주요 기술 스택 일치",
+      "salary": "4,000~5,500만원",
+      "deadline": "2024-04-05",
+      "isUrgent": false,
+      "tags": ["재택가능"],
+      "isScraped": false
+    }
+  ],
+  "scrappedJobs": [
+    { "id": "job_301", "scrappedAt": "2024-02-05", "deadline": "2024-03-27" },
+    { "id": "scrap_101", "company": "카카오뱅크", "title": "백엔드 개발자", "scrappedAt": "2024-01-20" }
+  ]
+}

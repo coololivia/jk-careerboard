@@ -1,0 +1,118 @@
+import { UserData } from "@/types/user";
+
+interface Props {
+  data: UserData;
+}
+
+export default function NewDashboard({ data }: Props) {
+  const { user, careerScore, skillGap, matchedJobs, resumeProgress } = data as any;
+
+  return (
+    <div className="flex flex-col gap-6">
+      {/* 헤더 */}
+      <div>
+        <p className="text-sm text-gray-500">안녕하세요,</p>
+        <h1 className="text-xl font-bold">{user.name}님 👋</h1>
+        <p className="mt-1 text-sm text-gray-500">
+          첫 취업까지 함께할게요
+        </p>
+      </div>
+
+      {/* Career Score — 격려 프레이밍 */}
+      <section className="rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 p-4 text-white">
+        <p className="text-xs opacity-80">커리어 스코어</p>
+        <div className="mt-1 flex items-end gap-2">
+          <p className="text-4xl font-bold">{careerScore?.score ?? 0}</p>
+          <p className="mb-1 text-sm opacity-80">/ 100</p>
+        </div>
+        <p className="mt-2 text-sm font-semibold">{careerScore?.message}</p>
+        <div className="mt-3 flex flex-col gap-2">
+          {(careerScore?.nextActions ?? []).map((action: any, i: number) => (
+            <div key={i} className="flex items-center justify-between rounded-lg bg-white/10 px-3 py-2">
+              <p className="text-xs">{action.action}</p>
+              <span className="text-xs font-bold text-green-300">{action.scoreImpact}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 이력서 진행도 */}
+      <section className="rounded-xl border border-gray-200 bg-white p-4">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-base font-semibold">이력서 완성도</h2>
+          <span className="text-sm font-bold text-blue-600">{user.resumeCompleteness}%</span>
+        </div>
+        <div className="h-2 rounded-full bg-gray-100">
+          <div
+            className="h-2 rounded-full bg-blue-600 transition-all"
+            style={{ width: `${user.resumeCompleteness}%` }}
+          />
+        </div>
+        <div className="mt-3 flex flex-col gap-2">
+          {(resumeProgress?.missingItems ?? []).map((item: any) => (
+            <div key={item.field} className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-gray-300" />
+                <p className="text-sm text-gray-600">{item.label}</p>
+                {item.required && (
+                  <span className="text-xs text-red-500">필수</span>
+                )}
+              </div>
+              <button className="text-xs text-blue-600 font-medium">추가하기</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skill Gap */}
+      <section>
+        <h2 className="mb-3 text-base font-semibold">지금 배우면 좋은 스킬</h2>
+        <div className="flex flex-col gap-3">
+          {(skillGap ?? []).map((skill: any) => (
+            <div key={skill.skill} className="rounded-xl border border-gray-200 bg-white p-4">
+              <div className="flex items-center justify-between">
+                <p className="font-semibold text-sm">{skill.skill}</p>
+                <span className="text-xs text-blue-600 font-medium">
+                  +{skill.additionalJobsIfAcquired}개 공고
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-gray-500">
+                이 스킬 채우면 지원 가능 공고 {skill.additionalJobsIfAcquired}개 더 생겨요
+              </p>
+              {skill.learningResource && (
+                <p className="mt-2 text-xs text-gray-400">참고: {skill.learningResource}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 맞춤 공고 */}
+      <section>
+        <h2 className="mb-3 text-base font-semibold">지금 지원 가능한 공고</h2>
+        <div className="flex flex-col gap-3">
+          {(matchedJobs ?? []).map((job: any) => (
+            <div key={job.id} className="rounded-xl border border-gray-200 bg-white p-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-xs text-gray-500">{job.company}</p>
+                  <p className="mt-0.5 font-semibold text-sm">{job.title}</p>
+                  <p className="mt-1 text-xs text-gray-500">{job.matchReason}</p>
+                </div>
+                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-bold text-blue-700">
+                  {job.matchScore}%
+                </span>
+              </div>
+              <div className="mt-3 flex items-center justify-between">
+                <p className="text-xs text-gray-400">{job.salary}</p>
+                <button className="rounded-lg bg-blue-600 px-4 py-1.5 text-xs font-semibold text-white">
+                  지원하기
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
