@@ -1,4 +1,5 @@
 import { UserData } from "@/types/user";
+import JobCard from "@/components/JobCard";
 
 interface Props {
   data: UserData;
@@ -39,34 +40,7 @@ export default function PassiveDashboard({ data }: Props) {
         </div>
         <div className="flex flex-col gap-3">
           {(matchedJobs ?? []).map((job: any) => (
-            <div key={job.id} className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-xs text-gray-500">{job.company}</p>
-                  <p className="mt-0.5 font-semibold">{job.title}</p>
-                  <p className="mt-1 text-xs text-gray-500">{job.matchReason}</p>
-                </div>
-                <div className="flex flex-col items-end gap-1">
-                  <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-bold text-blue-700">
-                    {job.matchScore}%
-                  </span>
-                  {job.isUrgent && (
-                    <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-600">
-                      {job.tags?.[0]}
-                    </span>
-                  )}
-                  {job.isScraped && (
-                    <span className="text-xs text-yellow-500">★ 스크랩</span>
-                  )}
-                </div>
-              </div>
-              <div className="mt-3 flex items-center justify-between">
-                <p className="text-xs text-gray-400">{job.salary}</p>
-                <button className="rounded-lg bg-blue-600 px-4 py-1.5 text-xs font-semibold text-white">
-                  원클릭 지원
-                </button>
-              </div>
-            </div>
+            <JobCard key={job.id} job={job} ctaLabel="원클릭 지원" />
           ))}
         </div>
       </section>

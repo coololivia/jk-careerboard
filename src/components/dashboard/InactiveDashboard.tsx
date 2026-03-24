@@ -1,4 +1,5 @@
 import { UserData } from "@/types/user";
+import JobCard from "@/components/JobCard";
 
 interface Props {
   data: UserData;
@@ -73,24 +74,7 @@ export default function InactiveDashboard({ data }: Props) {
           {(matchedJobs ?? [])
             .filter((j: any) => !j.isScraped || !j.isUrgent)
             .map((job: any) => (
-              <div key={job.id} className="rounded-xl border border-gray-200 bg-white p-4">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-xs text-gray-500">{job.company}</p>
-                    <p className="mt-0.5 font-semibold text-sm">{job.title}</p>
-                    <p className="mt-1 text-xs text-gray-500">{job.matchReason}</p>
-                  </div>
-                  <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-bold text-blue-700">
-                    {job.matchScore}%
-                  </span>
-                </div>
-                <div className="mt-3 flex items-center justify-between">
-                  <p className="text-xs text-gray-400">{job.salary}</p>
-                  <button className="rounded-lg bg-blue-600 px-4 py-1.5 text-xs font-semibold text-white">
-                    바로 지원
-                  </button>
-                </div>
-              </div>
+              <JobCard key={job.id} job={job} ctaLabel="바로 지원" />
             ))}
         </div>
       </section>

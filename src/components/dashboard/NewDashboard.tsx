@@ -1,4 +1,5 @@
 import { UserData } from "@/types/user";
+import JobCard from "@/components/JobCard";
 
 interface Props {
   data: UserData;
@@ -13,9 +14,7 @@ export default function NewDashboard({ data }: Props) {
       <div>
         <p className="text-sm text-gray-500">안녕하세요,</p>
         <h1 className="text-xl font-bold">{user.name}님 👋</h1>
-        <p className="mt-1 text-sm text-gray-500">
-          첫 취업까지 함께할게요
-        </p>
+        <p className="mt-1 text-sm text-gray-500">첫 취업까지 함께할게요</p>
       </div>
 
       {/* Career Score — 격려 프레이밍 */}
@@ -28,9 +27,14 @@ export default function NewDashboard({ data }: Props) {
         <p className="mt-2 text-sm font-semibold">{careerScore?.message}</p>
         <div className="mt-3 flex flex-col gap-2">
           {(careerScore?.nextActions ?? []).map((action: any, i: number) => (
-            <div key={i} className="flex items-center justify-between rounded-lg bg-white/10 px-3 py-2">
+            <div
+              key={i}
+              className="flex items-center justify-between rounded-lg bg-white/10 px-3 py-2"
+            >
               <p className="text-xs">{action.action}</p>
-              <span className="text-xs font-bold text-green-300">{action.scoreImpact}</span>
+              <span className="text-xs font-bold text-green-300">
+                {action.scoreImpact}
+              </span>
             </div>
           ))}
         </div>
@@ -38,9 +42,11 @@ export default function NewDashboard({ data }: Props) {
 
       {/* 이력서 진행도 */}
       <section className="rounded-xl border border-gray-200 bg-white p-4">
-        <div className="flex items-center justify-between mb-3">
+        <div className="mb-3 flex items-center justify-between">
           <h2 className="text-base font-semibold">이력서 완성도</h2>
-          <span className="text-sm font-bold text-blue-600">{user.resumeCompleteness}%</span>
+          <span className="text-sm font-bold text-blue-600">
+            {user.resumeCompleteness}%
+          </span>
         </div>
         <div className="h-2 rounded-full bg-gray-100">
           <div
@@ -58,7 +64,9 @@ export default function NewDashboard({ data }: Props) {
                   <span className="text-xs text-red-500">필수</span>
                 )}
               </div>
-              <button className="text-xs text-blue-600 font-medium">추가하기</button>
+              <button className="text-xs font-medium text-blue-600">
+                추가하기
+              </button>
             </div>
           ))}
         </div>
@@ -69,18 +77,24 @@ export default function NewDashboard({ data }: Props) {
         <h2 className="mb-3 text-base font-semibold">지금 배우면 좋은 스킬</h2>
         <div className="flex flex-col gap-3">
           {(skillGap ?? []).map((skill: any) => (
-            <div key={skill.skill} className="rounded-xl border border-gray-200 bg-white p-4">
+            <div
+              key={skill.skill}
+              className="rounded-xl border border-gray-200 bg-white p-4"
+            >
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-sm">{skill.skill}</p>
-                <span className="text-xs text-blue-600 font-medium">
+                <p className="text-sm font-semibold">{skill.skill}</p>
+                <span className="text-xs font-medium text-blue-600">
                   +{skill.additionalJobsIfAcquired}개 공고
                 </span>
               </div>
               <p className="mt-1 text-xs text-gray-500">
-                이 스킬 채우면 지원 가능 공고 {skill.additionalJobsIfAcquired}개 더 생겨요
+                이 스킬 채우면 지원 가능 공고 {skill.additionalJobsIfAcquired}개
+                더 생겨요
               </p>
               {skill.learningResource && (
-                <p className="mt-2 text-xs text-gray-400">참고: {skill.learningResource}</p>
+                <p className="mt-2 text-xs text-gray-400">
+                  참고: {skill.learningResource}
+                </p>
               )}
             </div>
           ))}
@@ -92,24 +106,7 @@ export default function NewDashboard({ data }: Props) {
         <h2 className="mb-3 text-base font-semibold">지금 지원 가능한 공고</h2>
         <div className="flex flex-col gap-3">
           {(matchedJobs ?? []).map((job: any) => (
-            <div key={job.id} className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-xs text-gray-500">{job.company}</p>
-                  <p className="mt-0.5 font-semibold text-sm">{job.title}</p>
-                  <p className="mt-1 text-xs text-gray-500">{job.matchReason}</p>
-                </div>
-                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-bold text-blue-700">
-                  {job.matchScore}%
-                </span>
-              </div>
-              <div className="mt-3 flex items-center justify-between">
-                <p className="text-xs text-gray-400">{job.salary}</p>
-                <button className="rounded-lg bg-blue-600 px-4 py-1.5 text-xs font-semibold text-white">
-                  지원하기
-                </button>
-              </div>
-            </div>
+            <JobCard key={job.id} job={job} ctaLabel="지원하기" />
           ))}
         </div>
       </section>
