@@ -13,11 +13,9 @@ interface ResumeAiData {
 
 interface Props {
   resumes: ResumeAiData[];
-  /** Active/Passive: true (편집+지원) | New: false (편집만) */
-  showApplyButton?: boolean;
 }
 
-export default function ResumeAiSection({ resumes, showApplyButton = true }: Props) {
+export default function ResumeAiSection({ resumes }: Props) {
   return (
     <section>
       <div className="mb-3 flex items-center justify-between">
@@ -51,11 +49,7 @@ export default function ResumeAiSection({ resumes, showApplyButton = true }: Pro
       ) : (
         <div className="flex flex-col gap-3">
           {resumes.map((resume) => (
-            <ResumeAiCard
-              key={resume.id}
-              resume={resume}
-              showApplyButton={showApplyButton}
-            />
+            <ResumeAiCard key={resume.id} resume={resume} />
           ))}
         </div>
       )}

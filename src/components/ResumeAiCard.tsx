@@ -12,7 +12,6 @@ interface ResumeAiData {
 
 interface Props {
   resume: ResumeAiData;
-  showApplyButton?: boolean;
 }
 
 function passRateStyle(rate: number): { numColor: string; barColor: string } {
@@ -21,7 +20,7 @@ function passRateStyle(rate: number): { numColor: string; barColor: string } {
   return { numColor: "text-jk-text-muted", barColor: "bg-jk-border" };
 }
 
-export default function ResumeAiCard({ resume, showApplyButton = true }: Props) {
+export default function ResumeAiCard({ resume }: Props) {
   const passStyle = passRateStyle(resume.passRate);
 
   return (
@@ -59,24 +58,17 @@ export default function ResumeAiCard({ resume, showApplyButton = true }: Props) 
         </div>
       </div>
 
-      {/* 3열 — AI 추천 · 편집/지원 버튼 */}
+      {/* 3열 — AI 추천 · 편집 버튼 */}
       <div className="mt-3 flex items-center justify-between gap-3">
         <p className="flex-1 text-[13px] font-semibold text-jk-blue leading-snug line-clamp-2">
           {resume.tip}
         </p>
-        <div className="flex shrink-0 items-center gap-2">
-          <Link
-            href={`/resume/${resume.id}`}
-            className="rounded-full bg-jk-bg px-4 py-2 text-[13px] font-semibold text-jk-text-strong transition-all active:scale-95"
-          >
-            이력서 편집
-          </Link>
-          {showApplyButton && (
-            <button className="rounded-full bg-jk-blue px-4 py-2 text-[13px] font-semibold text-white transition-all active:scale-95">
-              지원
-            </button>
-          )}
-        </div>
+        <Link
+          href={`/resume/${resume.id}`}
+          className="shrink-0 flex items-center justify-center h-10 rounded-[8px] bg-jk-bg px-4 text-[13px] font-semibold text-jk-text-strong transition-all active:scale-95"
+        >
+          이력서 편집
+        </Link>
       </div>
 
     </div>

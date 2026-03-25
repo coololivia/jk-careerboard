@@ -71,7 +71,7 @@ export default function NewDashboard({ data }: Props) {
       </section>
 
       {/* 이력서 AI 분석 — 신입은 지원 버튼 없음 */}
-      <ResumeAiSection resumes={resumeAiAnalysis ?? []} showApplyButton={false} />
+      <ResumeAiSection resumes={resumeAiAnalysis ?? []} />
 
       {/* 내 이력서 링크바 */}
       <ResumeLinkBar count={resumeCount ?? 0} />

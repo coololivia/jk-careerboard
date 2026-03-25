@@ -55,7 +55,7 @@ export default function PassiveDashboard({ data }: Props) {
       <div data-header-sentinel className="-mx-4 bg-white px-4 pt-6 pb-8 flex flex-col gap-7">
 
       {/* 이력서 AI 분석 */}
-      <ResumeAiSection resumes={resumeAiAnalysis ?? []} showApplyButton={true} />
+      <ResumeAiSection resumes={resumeAiAnalysis ?? []} />
 
       {/* 내 이력서 링크바 */}
       <ResumeLinkBar count={resumeCount ?? 0} />
