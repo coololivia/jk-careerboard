@@ -1,13 +1,28 @@
 # JK CareerBoard — PRD & Design Reference
 
 ## 프로젝트 개요
-잡코리아 "내 커리어" 탭의 모바일 대시보드. 사용자 행동 패턴에 따라 4가지 유형 대시보드를 제공하는 개인화 커리어 관리 화면.
+잡코리아 "내 커리어" 탭의 모바일 대시보드. 사용자 행동 패턴에 따라 5가지 유형 대시보드를 제공하는 개인화 커리어 관리 화면. CV 이력서 관리/작성/PDF 출력 포함.
 
 - **Framework**: Next.js 15 App Router + TypeScript
 - **Styling**: Tailwind CSS v4 (`@import "tailwindcss"`, `@theme {}`)
-- **Design System**: JAMS 2.0 (Figma key: `Dojrcqpr6br5B6BNkj08jR`)
+- **Design System**: JAMS 2.1 (Figma key: `mrgHPV0VxWmqxV4C8gABgv`)
 - **Reference Figma**: `rLV3wjzT7xYPTyJIck3tna` / node `1:5713` "JK 내커리어"
 - **Viewport**: max-width 390px (모바일 전용)
+
+## 라우트 구조
+
+```
+src/app/
+├── (dashboard)/          # 앱 쉘 포함 (DevTypeSwitcher + StickyHeader + TabBar)
+│   ├── layout.tsx
+│   └── page.tsx          # 대시보드 (/)
+└── resume/               # 독립 레이아웃 (앱 쉘 없음)
+    ├── page.tsx           # 이력서 관리 (/resume)
+    └── [id]/
+        ├── page.tsx       # 이력서 작성/수정 (/resume/new, /resume/:id)
+        └── preview/
+            └── page.tsx   # PDF 미리보기/출력 (/resume/:id/preview)
+```
 
 ---
 
@@ -72,8 +87,8 @@ Active 색: `#1b55f6`, Inactive 색: `#768091` / 탭 높이: 60px + iOS home ind
 ## 유저 타입별 대시보드
 
 ### 공통 URL 파라미터
-`?user=active|passive|new|inactive`
-`src/app/page.tsx` → `src/components/dashboard/{Type}Dashboard.tsx`
+`?user=active|passive|new|inactive|onboarding`
+`src/app/(dashboard)/page.tsx` → `src/components/dashboard/{Type}Dashboard.tsx`
 
 ---
 
@@ -212,6 +227,41 @@ mock 데이터: `reEngagementByTier.short|mid|long` 각각 headline/highlights/c
 - `hiring_pattern`: 체크리스트 + 통계 %
 - `market_salary`: 3행 비교표 (현재/시장평균/이직예상), highlight row `bg-jk-blue`
 - `beginner_spec`: 신입 스펙 체크리스트
+
+---
+
+## 5. 온보딩 (OnboardingDashboard)
+
+### 화면 구조
+1. 인사말: "환영해요, {name}님 / 내 커리어 서비스에 처음 오셨군요"
+2. **온보딩 진행 카드** — progress bar + 3단계
+   - 이력서 등록 / 희망조건 설정 / 알림 동의
+   - 현재 활성 스텝만 설명 + CTA 표시, 이후 스텝 `opacity-40`
+3. **공고 프리뷰** — `blur(3px)` + lock overlay + "지금 설정하기" CTA
+   - 온보딩 완료 전 미리보기 형태로만 노출
+
+---
+
+## CV 화면
+
+### 이력서 관리 (`/resume`)
+- 독립 레이아웃 (앱 쉘 없음), sticky 헤더 `< 이력서 관리`
+- ResumeCard: 대표이력서 badge / 신입·경력 badge / AI tip / 완성도·합격예측 progress bar / 최근 지원 / 액션 버튼
+- 우하단 FAB (`+`) → `/resume/new`
+- 다운로드 버튼 → `/resume/[id]/preview`
+
+### 이력서 작성/수정 (`/resume/[id]`)
+- `id === "new"` → 빈 폼 / 그 외 → mock 데이터 pre-fill
+- PDF/URL 업로드 탭바 (new일 때만)
+- 섹션: 이력서 정보 → 기본 정보(필수`*`) → Core Value → 경력(프로젝트 계층) → 학력 → 보유기술(태그 pill) → 수상·자격증 → 포트폴리오
+- 하단 고정: `임시저장` / `작성완료` / `미리보기`(수정 시)
+
+### PDF 미리보기 (`/resume/[id]/preview`)
+- 인쇄 최적화 HTML + `window.print()` (브라우저 PDF 저장)
+- 1페이지: 요약 (Info / Core Value / Career / Education / Tech.)
+- 2페이지+: 세부 경력사항 (프로젝트별 역할·성과·역량)
+- `@media print` CSS: `@page { size: A4; margin: 0 }`
+- **TODO**: `@react-pdf/renderer` 교체 예정 (이슈 #20)
 
 ---
 
