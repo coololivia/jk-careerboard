@@ -46,19 +46,16 @@ export default function ResumeAiCard({ resume, showApplyButton = true }: Props) 
       <div className="my-3 h-px bg-jk-border" />
 
       {/* 2열 — 완성도 | 합격예측 */}
-      <div className="flex items-center gap-4">
-        <div className="flex flex-1 items-center justify-between">
+      <div className="flex items-center gap-5">
+        <div className="flex items-baseline gap-1">
           <p className="text-[13px] text-jk-text-muted">완성도</p>
           <p className="text-[20px] font-bold leading-none text-jk-text-strong">
             {resume.completeness}%
           </p>
         </div>
-
-        <div className="w-px self-stretch bg-jk-border" />
-
-        <div className="flex flex-1 items-center justify-between">
+        <div className="flex items-baseline gap-1">
           <p className="text-[13px] text-jk-text-muted">합격예측</p>
-          <p className={`text-[20px] font-bold leading-none ${passStyle.numColor}`}>
+          <p className="text-[20px] font-bold leading-none text-jk-text-strong">
             {resume.passRate}%
           </p>
         </div>
