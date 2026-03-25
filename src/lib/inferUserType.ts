@@ -39,7 +39,7 @@ export function inferUserType(signals: BehaviorSignals): UserType {
 export function getUserTypeFromQuery(
   query: string | null
 ): UserType | null {
-  const valid: UserType[] = ["active", "passive", "new", "inactive"];
+  const valid: UserType[] = ["active", "passive", "new", "inactive", "onboarding"];
   if (query && valid.includes(query as UserType)) {
     return query as UserType;
   }

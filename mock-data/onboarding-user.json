@@ -1,0 +1,56 @@
+{
+  "user": {
+    "id": "user_onboard_001",
+    "name": "김민준",
+    "type": "onboarding",
+    "jobTitle": null,
+    "yearsOfExperience": 0,
+    "resumeCompleteness": 0,
+    "lastVisitedAt": null
+  },
+  "onboarding": {
+    "steps": [
+      {
+        "id": "resume",
+        "label": "이력서 등록",
+        "description": "보유한 이력서를 올리거나 새로 작성해요",
+        "completed": false,
+        "ctaLabel": "시작하기"
+      },
+      {
+        "id": "conditions",
+        "label": "희망 직무 · 조건 설정",
+        "description": "직무, 연봉, 근무지를 설정하면 맞춤 공고를 받아요",
+        "completed": false,
+        "ctaLabel": "설정하기"
+      },
+      {
+        "id": "notification",
+        "label": "맞춤 알림 받기",
+        "description": "조건에 맞는 공고가 올라오면 바로 알려드려요",
+        "completed": false,
+        "ctaLabel": "알림 켜기"
+      }
+    ],
+    "completedCount": 0,
+    "totalCount": 3,
+    "estimatedMinutes": 3
+  },
+  "previewJobs": [
+    {
+      "company": "카카오",
+      "title": "서비스 기획 PM",
+      "salary": "6,000~8,000만원"
+    },
+    {
+      "company": "토스",
+      "title": "프로덕트 매니저",
+      "salary": "7,000~9,000만원"
+    },
+    {
+      "company": "네이버",
+      "title": "UX 디자이너",
+      "salary": "5,500~7,500만원"
+    }
+  ]
+}

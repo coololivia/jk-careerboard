@@ -3,10 +3,11 @@
 import { useSearchParams } from "next/navigation";
 
 const TYPES = [
-  { value: "active",   label: "적극" },
-  { value: "new",      label: "신입" },
-  { value: "passive",  label: "잠재" },
-  { value: "inactive", label: "휴면" },
+  { value: "active",      label: "적극" },
+  { value: "new",         label: "신입" },
+  { value: "passive",     label: "잠재" },
+  { value: "inactive",    label: "휴면" },
+  { value: "onboarding",  label: "첫진입" },
 ] as const;
 
 const INACTIVE_TIERS = [

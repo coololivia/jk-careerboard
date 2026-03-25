@@ -1,4 +1,4 @@
-export type UserType = "active" | "passive" | "new" | "inactive";
+export type UserType = "active" | "passive" | "new" | "inactive" | "onboarding";
 
 export interface BehaviorSignals {
   visitFrequency: "daily" | "weekly" | "occasional" | "inactive";
