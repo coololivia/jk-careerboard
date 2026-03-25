@@ -125,6 +125,26 @@ export default function ActiveDashboard({ data }: Props) {
               </p>
             </div>
           </div>
+
+          {/* 커리어 스코어 */}
+          {careerScore && (
+            <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-[18px] bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-1.01L10 2z" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className="mt-4">
+                <p className="text-[12px] font-medium leading-snug text-jk-text-muted">커리어<br />스코어</p>
+                <p className="mt-1.5 text-[28px] font-bold leading-none text-jk-text-strong">
+                  {careerScore.score}
+                  <span className="text-base font-medium text-jk-text-muted">/100</span>
+                </p>
+                <p className="mt-1 text-[11px] font-semibold text-jk-blue">{careerScore.marketComparison}</p>
+              </div>
+            </div>
+          )}
+
           {/* trailing spacer */}
           <div className="shrink-0 w-px" />
         </div>
@@ -187,11 +207,11 @@ export default function ActiveDashboard({ data }: Props) {
               </div>
 
               <div className="mx-4 h-px bg-[#F1F2F3]" />
-              <div className="flex items-center px-4">
+              <div className="flex items-center gap-1 px-3 py-1.5">
                 {(app.actions as string[]).map((action: string, idx: number) => (
                   <React.Fragment key={action}>
-                    {idx > 0 && <div className="w-px h-[18px] shrink-0 bg-[#F1F2F3]" />}
-                    <button className="flex-1 py-3 text-[13px] font-medium text-[#AFB5BE] transition-all active:opacity-60 text-center">
+                    {idx > 0 && <div className="w-px h-5 shrink-0 bg-[#F1F2F3]" />}
+                    <button className="flex-1 h-10 rounded-[8px] text-[13px] font-medium text-[#AFB5BE] transition-all active:bg-jk-bg active:opacity-80 text-center">
                       {action}
                     </button>
                   </React.Fragment>
@@ -235,8 +255,6 @@ export default function ActiveDashboard({ data }: Props) {
       {/* Skill Gap */}
       <SkillGapCard skills={skillGap ?? []} userType="active" targetJob={user.jobTitle} bordered />
 
-      {/* Career Score */}
-      <CareerScoreCard data={careerScore} timeline={careerTimeline} userType="active" bordered />
 
       </div>{/* ── 흰색 배경 섹션 끝 ── */}
     </div>
