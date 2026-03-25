@@ -46,33 +46,21 @@ export default function ResumeAiCard({ resume, showApplyButton = true }: Props) 
       <div className="my-3 h-px bg-jk-border" />
 
       {/* 2열 — 완성도 | 합격예측 */}
-      <div className="flex items-start gap-4">
-        <div className="flex-1">
-          <p className="text-[11px] text-jk-text-muted">완성도</p>
-          <p className="mt-0.5 text-[24px] font-bold leading-none text-jk-text-strong">
+      <div className="flex items-center gap-4">
+        <div className="flex flex-1 items-center justify-between">
+          <p className="text-[13px] text-jk-text-muted">완성도</p>
+          <p className="text-[20px] font-bold leading-none text-jk-text-strong">
             {resume.completeness}%
           </p>
-          <div className="mt-2 h-1 overflow-hidden rounded-full bg-jk-bg-section">
-            <div
-              className="h-1 rounded-full bg-jk-blue transition-all duration-500"
-              style={{ width: `${resume.completeness}%` }}
-            />
-          </div>
         </div>
 
         <div className="w-px self-stretch bg-jk-border" />
 
-        <div className="flex-1">
-          <p className="text-[11px] text-jk-text-muted">합격예측</p>
-          <p className={`mt-0.5 text-[24px] font-bold leading-none ${passStyle.numColor}`}>
+        <div className="flex flex-1 items-center justify-between">
+          <p className="text-[13px] text-jk-text-muted">합격예측</p>
+          <p className={`text-[20px] font-bold leading-none ${passStyle.numColor}`}>
             {resume.passRate}%
           </p>
-          <div className="mt-2 h-1 overflow-hidden rounded-full bg-jk-bg-section">
-            <div
-              className={`h-1 rounded-full transition-all duration-500 ${passStyle.barColor}`}
-              style={{ width: `${resume.passRate}%` }}
-            />
-          </div>
         </div>
       </div>
 
