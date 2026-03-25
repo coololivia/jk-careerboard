@@ -21,6 +21,8 @@ interface Props {
   bordered?: boolean;
 }
 
+// ── helpers ──────────────────────────────────────────────────────────────────
+
 const AVATAR_PALETTES = [
   { bg: "bg-blue-50", text: "text-blue-600" },
   { bg: "bg-violet-50", text: "text-violet-600" },
@@ -31,37 +33,22 @@ const AVATAR_PALETTES = [
   { bg: "bg-indigo-50", text: "text-indigo-600" },
 ];
 
+function calcDday(deadline?: string): string | null {
+  if (!deadline) return null;
+  const diff = Math.ceil((new Date(deadline).getTime() - Date.now()) / 86400000);
+  if (diff < 0) return "마감";
+  if (diff === 0) return "D-day";
+  return `D-${diff}`;
+}
+
+// ── sub-components (kept for ApplyBottomSheet) ───────────────────────────────
+
 function CompanyAvatar({ name }: { name: string }) {
   const idx = (name.charCodeAt(0) + name.length) % AVATAR_PALETTES.length;
   const { bg, text } = AVATAR_PALETTES[idx];
   return (
     <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] text-sm font-bold ${bg} ${text}`}>
       {name.charAt(0)}
-    </div>
-  );
-}
-
-function MatchScoreRing({ score }: { score: number }) {
-  const radius = 16;
-  const circumference = 2 * Math.PI * radius;
-  const filled = (score / 100) * circumference;
-  const color = score >= 85 ? "#1b55f6" : score >= 70 ? "#8b5cf6" : "#768091";
-
-  return (
-    <div className="relative flex h-11 w-11 shrink-0 items-center justify-center">
-      <svg width="44" height="44" className="-rotate-90">
-        <circle cx="22" cy="22" r={radius} fill="none" stroke="#f0f2fa" strokeWidth="3" />
-        <circle
-          cx="22" cy="22" r={radius} fill="none"
-          stroke={color} strokeWidth="3"
-          strokeDasharray={circumference}
-          strokeDashoffset={circumference - filled}
-          strokeLinecap="round"
-        />
-      </svg>
-      <span className="absolute text-[10px] font-bold" style={{ color }}>
-        {score}%
-      </span>
     </div>
   );
 }
@@ -120,53 +107,105 @@ function ApplyBottomSheet({ job, onClose }: { job: Job; onClose: () => void }) {
   );
 }
 
+// ── BookmarkIcon ─────────────────────────────────────────────────────────────
+
+function BookmarkIcon({ filled }: { filled: boolean }) {
+  return filled ? (
+    // filled amber star
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        fill="#F59E0B"
+        stroke="#F59E0B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ) : (
+    // outline star
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        fill="none"
+        stroke="#768091"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+// ── JobCard ──────────────────────────────────────────────────────────────────
+
 export default function JobCard({ job, ctaLabel = "바로 지원", bordered }: Props) {
   const [showSheet, setShowSheet] = useState(false);
+  const [scraped, setScraped] = useState(job.isScraped ?? false);
+
+  const dday = calcDday(job.deadline);
+
+  const containerClass = bordered
+    ? "card-tap rounded-[12px] border border-[#E8E9EC] bg-white p-4"
+    : "card-tap py-4 border-b border-[#F1F2F3]";
 
   return (
     <>
-      <div className={`card-tap rounded-[16px] bg-white p-4 ${bordered ? "border border-jk-border" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`}>
-        {/* 상단: 아바타 + 회사/직무 + 매치링 */}
-        <div className="flex items-start gap-3">
-          <CompanyAvatar name={job.company} />
-          <div className="min-w-0 flex-1">
-            <p className="text-xs font-medium text-jk-text-muted">{job.company}</p>
-            <p className="mt-0.5 text-[15px] font-bold leading-snug text-jk-text-strong truncate">{job.title}</p>
-          </div>
-          <MatchScoreRing score={job.matchScore} />
-        </div>
-
-        {/* 태그 */}
-        <div className="mt-2.5 flex flex-wrap gap-1.5">
-          {job.isScraped && (
-            <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-600">★ 스크랩</span>
-          )}
-          {job.isUrgent && job.tags?.[0] && (
-            <span className="rounded-full bg-red-50 px-2.5 py-1 text-[11px] font-semibold text-red-500">{job.tags[0]}</span>
-          )}
-          {job.tags?.slice(job.isUrgent ? 1 : 0).map((tag) =>
-            tag === "합격패턴" ? (
-              <span key={tag} className="rounded-full bg-violet-50 px-2.5 py-1 text-[11px] font-semibold text-jk-purple">✦ 합격패턴</span>
-            ) : (
-              <span key={tag} className="rounded-full bg-jk-bg-section px-2.5 py-1 text-[11px] text-jk-text-tertiary">{tag}</span>
-            )
-          )}
-        </div>
-
-        {/* 매치 이유 */}
-        <p className="mt-2.5 text-xs leading-relaxed text-jk-text-muted">{job.matchReason}</p>
-
-        {/* 하단: 연봉 + CTA */}
-        <div className="mt-3 flex items-center justify-between">
-          <p className="text-sm font-semibold text-jk-text-secondary">{job.salary}</p>
+      <div
+        className={containerClass}
+        onClick={() => setShowSheet(true)}
+      >
+        {/* Row 1: Job title + bookmark */}
+        <div className="flex items-start justify-between gap-2">
+          <p className="text-[16px] font-bold leading-snug text-jk-text-strong flex-1 min-w-0 truncate">
+            {job.title}
+          </p>
           <button
-            onClick={() => setShowSheet(true)}
-            className="rounded-full bg-jk-blue px-4 py-2 text-xs font-bold text-white transition-all duration-150 active:scale-95 active:opacity-80"
+            className="shrink-0 -mt-0.5 -mr-0.5 p-0.5 active:scale-90 transition-transform duration-100"
+            onClick={(e) => {
+              e.stopPropagation();
+              setScraped((prev) => !prev);
+            }}
+            aria-label={scraped ? "스크랩 해제" : "스크랩"}
           >
-            {ctaLabel}
+            <BookmarkIcon filled={scraped} />
           </button>
         </div>
+
+        {/* Row 2: Company name + D-day badge */}
+        <div className="mt-1 flex items-center gap-2">
+          <p className="text-[13px] text-jk-text-muted truncate">{job.company}</p>
+          {dday && (
+            <span className="shrink-0 text-[12px] font-semibold text-orange-500">
+              {dday}
+            </span>
+          )}
+        </div>
+
+        {/* Row 3: Tags */}
+        {job.tags && job.tags.length > 0 && (
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
+            {job.tags.map((tag) =>
+              tag === "합격패턴" ? (
+                <span
+                  key={tag}
+                  className="rounded-full bg-violet-50 px-2.5 py-1 text-[12px] font-semibold text-violet-600"
+                >
+                  ✦ 합격패턴
+                </span>
+              ) : (
+                <span
+                  key={tag}
+                  className="rounded-full bg-[#F1F2F3] px-2.5 py-1 text-[12px] text-[#575f6c]"
+                >
+                  {tag}
+                </span>
+              )
+            )}
+          </div>
+        )}
       </div>
+
       {showSheet && <ApplyBottomSheet job={job} onClose={() => setShowSheet(false)} />}
     </>
   );
