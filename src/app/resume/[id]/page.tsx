@@ -741,6 +741,19 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
 
       {/* 하단 고정 버튼바 */}
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] bg-white border-t border-jk-border px-4 py-4 flex gap-3 z-20">
+        {/* 미리보기 버튼 — new 이력서는 숨김 */}
+        {!isNew && (
+          <Link
+            href={`/resume/${id}/preview`}
+            className="flex items-center gap-1.5 rounded-full border border-jk-border px-4 py-3 text-[14px] font-semibold text-jk-text-muted transition-all active:scale-[0.98] hover:border-jk-blue hover:text-jk-blue shrink-0"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <ellipse cx="8" cy="8" rx="7" ry="5" stroke="currentColor" strokeWidth="1.4"/>
+              <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="1.4"/>
+            </svg>
+            미리보기
+          </Link>
+        )}
         <button
           type="button"
           onClick={handleTempSave}

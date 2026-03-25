@@ -105,12 +105,15 @@ function ResumeCard({ resume }: { resume: Resume }) {
             </svg>
             삭제
           </button>
-          <button className="flex items-center gap-1 rounded-[8px] px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95">
+          <Link
+            href={`/resume/${resume.id}/preview`}
+            className="flex items-center gap-1 rounded-[8px] px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95"
+          >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M7 2v7M4 6l3 3 3-3M2 10v1.5c0 .3.2.5.5.5h9c.3 0 .5-.2.5-.5V10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             다운로드
-          </button>
+          </Link>
           <button className="flex items-center gap-1 rounded-[8px] px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M5 2h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM9 2l1.5 1.5M5 2L3.5 3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
