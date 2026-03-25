@@ -46,7 +46,7 @@ export default function ResumeLinkBar({ count, showUpdateBadge = false }: Props)
       </Link>
       <Link
         href="/resume/new"
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-jk-blue shadow-[0_4px_12px_rgba(27,85,246,0.35)] transition-all active:scale-95 hover:bg-jk-blue-hover"
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#083CCC] transition-all active:scale-95"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M10 4v12M4 10h12" stroke="white" strokeWidth="2" strokeLinecap="round" />
