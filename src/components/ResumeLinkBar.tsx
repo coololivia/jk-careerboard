@@ -8,7 +8,7 @@ interface Props {
 
 export default function ResumeLinkBar({ count, showUpdateBadge = false }: Props) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2">
       <Link
         href="/resume"
         className="card-tap flex-1 rounded-full bg-white px-4 py-3"
