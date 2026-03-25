@@ -156,6 +156,9 @@ export default function ActiveDashboard({ data }: Props) {
       {/* 이력서 AI 분석 */}
       <ResumeAiSection resumes={resumeAiAnalysis ?? []} />
 
+      {/* 스킬 갭 */}
+      <SkillGapCard skills={skillGap ?? []} userType="active" targetJob={user.jobTitle} bordered />
+
       {/* 내 이력서 링크바 */}
       <ResumeLinkBar count={resumeCount ?? 0} />
 
@@ -234,26 +237,23 @@ export default function ActiveDashboard({ data }: Props) {
             </span>
           }
         />
+        {/* 합격자 인사이트 — 맞춤 공고 최상단 */}
+        {insight && <InsightCard data={insight} bordered />}
+
         {(matchedJobs ?? []).length === 0 ? (
-          <div className="flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
+          <div className="mt-3 flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
             <span className="text-3xl">📭</span>
             <p className="text-sm font-semibold text-jk-text-strong">현재 조건에 맞는 공고가 없어요</p>
             <p className="text-xs text-jk-text-muted">이력서를 업데이트하면 더 많은 공고를 볼 수 있어요</p>
           </div>
         ) : (
-          <div className="flex flex-col gap-3">
+          <div className="mt-3 flex flex-col gap-3">
             {(matchedJobs ?? []).map((job: any) => (
               <JobCard key={job.id} job={job} ctaLabel="바로 지원" bordered />
             ))}
           </div>
         )}
       </section>
-
-      {/* 합격자 인사이트 */}
-      {insight && <InsightCard data={insight} bordered />}
-
-      {/* Skill Gap */}
-      <SkillGapCard skills={skillGap ?? []} userType="active" targetJob={user.jobTitle} bordered />
 
 
       </div>{/* ── 흰색 배경 섹션 끝 ── */}
