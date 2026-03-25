@@ -28,22 +28,44 @@ src/app/
 
 ## 디자인 토큰 (globals.css @theme)
 
+### 컬러
+
 | 토큰 | 값 | 용도 |
 |------|-----|------|
 | `--color-jk-blue` | `#1b55f6` | Primary action, active state |
-| `--color-jk-blue-hover` | `#083ccc` | Hover/pressed |
+| `--color-jk-blue-hover` | `#083ccc` | Hover/pressed, FAB (+) 버튼 |
 | `--color-jk-blue-light` | `#e1e7fa` | Light blue bg |
 | `--color-jk-bg` | `#f3f4f5` | 앱 배경 |
-| `--color-jk-bg-blue` | `#f0f2fa` | 파란 계열 섹션 bg |
+| `--color-jk-bg-blue` | `#f0f2fa` | 파란 계열 섹션 bg, AI 팁 배경 |
 | `--color-jk-bg-section` | `#f1f2f3` | 섹션 내부 bg |
 | `--color-jk-text-strong` | `#1a1a1e` | 제목, 강조 텍스트 |
 | `--color-jk-text-secondary` | `#3e434b` | 본문 |
 | `--color-jk-text-muted` | `#768091` | 보조 텍스트 |
 | `--color-jk-text-tertiary` | `#575f6c` | 태그 텍스트 등 |
+| `--color-jk-text-disabled` | `#afb5be` | 비활성 버튼 텍스트 (수정/보기 등) |
 | `--color-jk-purple` | `#8b5cf6` | 합격패턴 배지 |
-| `--color-jk-border` | `#d5d8dc` | 구분선, 테두리 |
-| `--radius-md` | `12px` | 일반 카드 |
-| `--radius-lg` | `16px` | 주요 카드 |
+| `--color-jk-border` | `#d5d8dc` | 일반 구분선, 테두리 |
+| `--color-jk-card-stroke` | `#e8e9ec` | 카드 외곽 테두리 |
+| `--color-jk-divider` | `#f1f2f3` | 카드 내부 구분선 (가로/세로) |
+
+### 보더 라디우스
+
+| 토큰 | 값 | 용도 |
+|------|-----|------|
+| `--radius-xs` | `4px` | 소형 배지 |
+| `--radius-sm` | `8px` | 액션 버튼 (수정/보기/재지원) |
+| `--radius-md` | `12px` | 일반 카드 (ResumeAiCard, 지원현황) |
+| `--radius-lg` | `16px` | 주요 카드 (CareerScore, Insight 등) |
+| `--radius-xl` | `18px` | Stats 스와이프 카드 |
+| `--radius-full` | `32px` | 알약형 버튼, 태그 pill |
+
+### 쉐도우
+
+| 용도 | 값 |
+|------|-----|
+| Stats 카드 | `0 2px 12px rgba(0,0,0,0.07)` |
+| 내 이력서 링크바 (pink glow) | `0 0 10px 0 rgba(255,135,194,0.30)` |
+| 내 이력서 링크바 (border gradient) | `linear-gradient(90deg, #DEE0FFCC 0%, #6D79FFCC 17%, #BF47FFCC 53%, #FF9334CC 78%, #FFDFC2CC 100%)` |
 
 ---
 

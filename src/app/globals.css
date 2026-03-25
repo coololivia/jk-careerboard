@@ -3,7 +3,7 @@
 
 @import "tailwindcss";
 
-/* 잡코리아 디자인 토큰 — JAMS 2.0 기준 */
+/* 잡코리아 디자인 토큰 — JAMS 2.1 기준 */
 @theme {
   /* 배경 */
   --color-jk-bg: #f3f4f5;
@@ -16,10 +16,13 @@
   --color-jk-text-secondary: #3e434b;
   --color-jk-text-tertiary: #575f6c;
   --color-jk-text-muted: #768091;
+  --color-jk-text-disabled: #afb5be;
   --color-jk-text-placeholder: #949ba8;
 
   /* 보더 */
   --color-jk-border: #d5d8dc;
+  --color-jk-card-stroke: #e8e9ec;
+  --color-jk-divider: #f1f2f3;
 
   /* 브랜드 블루 — JK 메인 컬러 */
   --color-jk-blue: #1b55f6;
@@ -39,9 +42,10 @@
 
   /* 보더 라디우스 */
   --radius-xs: 4px;
-  --radius-sm: 10px;
+  --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 18px;
   --radius-full: 32px;
 }
 
