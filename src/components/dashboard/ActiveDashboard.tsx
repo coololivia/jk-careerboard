@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
 import InsightCard from "@/components/InsightCard";
@@ -171,11 +172,18 @@ export default function ActiveDashboard({ data }: Props) {
                 <p className="text-[11px] text-jk-text-muted">{app.appliedAt}</p>
               </div>
 
-              <div className="mt-2 px-4 pb-4">
-                <p className="text-sm text-jk-blue underline decoration-jk-blue/40 underline-offset-2">
-                  {app.resumeName}
+              <div className="mt-1.5 px-4 pb-3">
+                <p className="text-[14px] font-medium text-jk-text-strong">
+                  {app.position}
+                  <span className="mx-1.5 text-jk-border">·</span>
+                  <span className="text-jk-text-muted">{app.location}</span>
                 </p>
-                <p className="mt-0.5 text-xs text-jk-text-muted">{app.location}</p>
+              </div>
+
+              <div className="px-4 pb-4">
+                <Link href={`/resume/${app.appliedResumeId}`} className="text-[13px] text-jk-blue underline decoration-jk-blue/40 underline-offset-2">
+                  {app.appliedResumeName}
+                </Link>
               </div>
 
               <div className="mx-4 h-px bg-[#F1F2F3]" />
