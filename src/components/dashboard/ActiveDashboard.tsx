@@ -191,7 +191,7 @@ export default function ActiveDashboard({ data }: Props) {
                 {(app.actions as string[]).map((action: string, idx: number) => (
                   <React.Fragment key={action}>
                     {idx > 0 && <div className="w-px h-[18px] shrink-0 bg-[#F1F2F3]" />}
-                    <button className="flex-1 py-3 text-[13px] font-medium text-jk-text-secondary transition-all active:opacity-60 text-center">
+                    <button className="flex-1 py-3 text-[13px] font-medium text-[#AFB5BE] transition-all active:opacity-60 text-center">
                       {action}
                     </button>
                   </React.Fragment>
