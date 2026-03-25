@@ -16,6 +16,7 @@ export default function ResumeLinkBar({ count, showUpdateBadge = false }: Props)
           background:
             "linear-gradient(white,white) padding-box, linear-gradient(90deg,#DEE0FFCC 0%,#6D79FFCC 17%,#BF47FFCC 53%,#FF9334CC 78%,#FFDFC2CC 100%) border-box",
           border: "1px solid transparent",
+          boxShadow: "0 0 10px 0 rgba(255,135,194,0.30)",
         }}
       >
         <div className="flex items-center justify-between">
