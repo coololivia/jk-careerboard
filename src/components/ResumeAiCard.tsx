@@ -28,17 +28,15 @@ export default function ResumeAiCard({ resume, showApplyButton = true }: Props) 
     <div className="card-tap rounded-[16px] bg-white p-4 border border-jk-border">
 
       {/* 1열 — 타이틀 · 신입/경력 · 최종 작성일 */}
-      <div className="flex items-center gap-2">
-        <p className="text-[15px] font-bold text-jk-text-strong truncate flex-1 min-w-0">
-          {resume.name}
-        </p>
-        <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold
-          ${resume.type === "경력"
-            ? "bg-jk-bg-blue text-jk-blue"
-            : "bg-jk-bg-section text-jk-text-muted"
-          }`}>
-          {resume.type}
-        </span>
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <p className="text-[15px] font-bold text-jk-text-strong truncate">
+            {resume.name}
+          </p>
+          <span className="shrink-0 rounded-full bg-jk-bg-section px-2 py-0.5 text-[11px] font-semibold text-jk-text-muted">
+            {resume.type}
+          </span>
+        </div>
         <p className="shrink-0 text-[11px] text-jk-text-muted">{resume.createdLabel}</p>
       </div>
 
