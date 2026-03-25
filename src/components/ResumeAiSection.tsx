@@ -31,7 +31,7 @@ export default function ResumeAiSection({ resumes }: Props) {
       </div>
 
       {resumes.length === 0 ? (
-        <div className="flex flex-col items-center gap-2 rounded-[16px] border border-jk-border bg-white py-10 text-center">
+        <div className="flex flex-col items-center gap-2 rounded-lg border border-jk-card-stroke bg-white py-10 text-center">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-jk-bg-blue text-2xl">
             📄
           </div>

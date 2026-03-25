@@ -97,7 +97,7 @@ function CareerTimeline({ timeline }: { timeline: TimelineEvent[] }) {
 
 export default function CareerScoreCard({ data, timeline, userType, bordered }: Props) {
   const [showTimeline, setShowTimeline] = useState(false);
-  const cardClass = `rounded-[18px] bg-white p-5 ${bordered ? "border border-jk-border" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
+  const cardClass = `rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
 
   // 신입: 시장 포지셔닝 프레이밍
   if (userType === "new") {
@@ -106,7 +106,7 @@ export default function CareerScoreCard({ data, timeline, userType, bordered }: 
     const projectedPct = Math.round((projectedScore / 100) * 100);
 
     return (
-      <section className={`rounded-[18px] bg-white p-5 ${bordered ? "border border-jk-border" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`}>
+      <section className={`rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`}>
         <p className="text-xs font-medium text-jk-text-muted">커리어 스코어</p>
         <div className="mt-2 flex items-end justify-between">
           <div className="flex items-end gap-2">
@@ -135,14 +135,14 @@ export default function CareerScoreCard({ data, timeline, userType, bordered }: 
 
         {/* 두 가지 포지셔닝 stat */}
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <div className="rounded-[12px] bg-jk-bg px-3.5 py-3">
+          <div className="rounded-md bg-jk-bg px-3.5 py-3">
             <p className="text-[11px] text-jk-text-muted">지금 지원 가능</p>
             <p className="mt-0.5 text-lg font-bold text-jk-text-strong">
               {data.currentEligibleJobs ?? 0}
               <span className="text-sm font-medium text-jk-text-muted">개 공고</span>
             </p>
           </div>
-          <div className="rounded-[12px] bg-jk-bg px-3.5 py-3">
+          <div className="rounded-md bg-jk-bg px-3.5 py-3">
             <p className="text-[11px] text-jk-text-muted">완성 후 도달</p>
             <p className="mt-0.5 text-lg font-bold text-jk-blue">
               상위 {data.projectedPercentile ?? "-"}

@@ -33,7 +33,7 @@ export default function PassiveDashboard({ data }: Props) {
 
       {/* Push 알림 CTA */}
       {!(data as any).pushNotificationConsent && (
-        <div className="overflow-hidden rounded-[18px] bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+        <div className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
           <div className="flex items-start gap-3 p-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-jk-bg-blue text-xl">
               🔔
@@ -67,7 +67,7 @@ export default function PassiveDashboard({ data }: Props) {
           right={<span className="text-xs font-semibold text-jk-text-muted">{(matchedJobs ?? []).length}개</span>}
         />
         {(matchedJobs ?? []).length === 0 ? (
-          <div className="flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
+          <div className="flex flex-col items-center gap-2 rounded-lg bg-white py-10 border border-jk-card-stroke">
             <span className="text-3xl">🔍</span>
             <p className="text-sm font-semibold text-jk-text-strong">조건에 맞는 공고를 찾고 있어요</p>
             <p className="text-xs text-jk-text-muted">알림 설정하면 올라오는 즉시 알려드려요</p>

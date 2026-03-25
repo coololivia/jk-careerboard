@@ -24,7 +24,7 @@ const tipColorMap: Record<TipColor, string> = {
 
 function ResumeCard({ resume }: { resume: Resume }) {
   return (
-    <div className="card-tap rounded-[16px] bg-white border border-jk-border p-4">
+    <div className="card-tap rounded-lg bg-white border border-jk-card-stroke p-4">
       {/* 상단 row: badges + AI tip */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-1.5 flex-wrap">
@@ -99,7 +99,7 @@ function ResumeCard({ resume }: { resume: Resume }) {
       {/* 구분선 + 액션 row */}
       <div className="border-t border-jk-border mt-3 pt-3">
         <div className="flex items-center gap-1">
-          <button className="flex items-center gap-1 rounded-[8px] px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95">
+          <button className="flex items-center gap-1 rounded-sm px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 11.5h2.5l7-7-2.5-2.5-7 7V11.5zM11.5 3L11 3.5l-1-1 .5-.5a.7.7 0 0 1 1 0l.5.5a.7.7 0 0 1 0 1z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -107,14 +107,14 @@ function ResumeCard({ resume }: { resume: Resume }) {
           </button>
           <Link
             href={`/resume/${resume.id}/preview`}
-            className="flex items-center gap-1 rounded-[8px] px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95"
+            className="flex items-center gap-1 rounded-sm px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M7 2v7M4 6l3 3 3-3M2 10v1.5c0 .3.2.5.5.5h9c.3 0 .5-.2.5-.5V10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             다운로드
           </Link>
-          <button className="flex items-center gap-1 rounded-[8px] px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95">
+          <button className="flex items-center gap-1 rounded-sm px-2.5 py-1.5 text-[12px] font-medium text-jk-text-muted hover:bg-jk-bg-section transition-colors active:scale-95">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M5 2h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM9 2l1.5 1.5M5 2L3.5 3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M4 6h6M4 8.5h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
@@ -124,7 +124,7 @@ function ResumeCard({ resume }: { resume: Resume }) {
           <div className="ml-auto">
             <Link
               href={`/resume/${resume.id}`}
-              className="flex items-center gap-1 rounded-[8px] bg-jk-blue px-3 py-1.5 text-[12px] font-semibold text-white transition-colors active:scale-95 hover:bg-jk-blue-hover"
+              className="flex items-center gap-1 rounded-sm bg-jk-blue px-3 py-1.5 text-[12px] font-semibold text-white transition-colors active:scale-95 hover:bg-jk-blue-hover"
             >
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M1.5 10.5h2l5.5-5.5-2-2-5.5 5.5v2zM8.5 2l1 1-1-1z" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>

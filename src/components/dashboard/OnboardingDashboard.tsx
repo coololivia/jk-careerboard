@@ -38,7 +38,7 @@ export default function OnboardingDashboard({ data }: Props) {
       </div>
 
       {/* 온보딩 진행 카드 */}
-      <section className="overflow-hidden rounded-[18px] bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+      <section className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
 
         {/* 카드 헤더 */}
         <div className="px-4 pt-4 pb-3">
@@ -123,7 +123,7 @@ export default function OnboardingDashboard({ data }: Props) {
             {/* 흐릿한 공고 카드들 */}
             <div className="flex flex-col gap-3 select-none pointer-events-none" style={{ filter: "blur(3px)" }}>
               {(previewJobs ?? []).map((job: any, i: number) => (
-                <div key={i} className="rounded-[16px] bg-white p-4 border border-jk-border">
+                <div key={i} className="rounded-lg bg-white p-4 border border-jk-card-stroke">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-[10px] bg-jk-bg-section" />

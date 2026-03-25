@@ -42,7 +42,7 @@ export default function NewDashboard({ data }: Props) {
           <h2 className="text-[18px] font-bold text-jk-text-strong">이력서 완성도</h2>
           <span className="text-sm font-bold text-jk-blue">{user.resumeCompleteness}%</span>
         </div>
-        <div className="rounded-[16px] bg-white p-4 border border-jk-border">
+        <div className="rounded-lg bg-white p-4 border border-jk-card-stroke">
           <div className="mb-1 flex items-center justify-between text-xs text-jk-text-muted">
             <span>작성 완료</span>
             <span className="font-semibold text-jk-blue">{user.resumeCompleteness}%</span>
@@ -86,7 +86,7 @@ export default function NewDashboard({ data }: Props) {
       <section>
         <SectionHeader title="지금 지원 가능한 공고" />
         {(matchedJobs ?? []).length === 0 ? (
-          <div className="flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
+          <div className="flex flex-col items-center gap-2 rounded-lg bg-white py-10 border border-jk-card-stroke">
             <span className="text-3xl">📋</span>
             <p className="text-sm font-semibold text-jk-text-strong">이력서를 완성하면 공고가 생겨요</p>
             <p className="text-xs text-jk-text-muted">희망 직무와 스킬을 추가해보세요</p>

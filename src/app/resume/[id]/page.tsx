@@ -127,7 +127,7 @@ function SectionHeader({ title, optional }: { title: string; optional?: boolean 
 }
 
 const inputCls =
-  "w-full rounded-[10px] border border-jk-border px-4 py-3 text-[15px] text-jk-text-strong placeholder:text-jk-text-placeholder focus:border-jk-blue focus:outline-none bg-white transition-colors";
+  "w-full rounded-[10px] border border-jk-card-stroke px-4 py-3 text-[15px] text-jk-text-strong placeholder:text-jk-text-placeholder focus:border-jk-blue focus:outline-none bg-white transition-colors";
 
 function FieldLabel({ label, required, optional }: { label: string; required?: boolean; optional?: boolean }) {
   return (
@@ -186,7 +186,7 @@ function BulletListInput({
             value={item}
             placeholder={placeholder}
             onChange={(e) => update(i, e.target.value)}
-            className="flex-1 rounded-[8px] border border-jk-border px-3 py-2 text-[14px] text-jk-text-strong placeholder:text-jk-text-placeholder focus:border-jk-blue focus:outline-none bg-white transition-colors"
+            className="flex-1 rounded-sm border border-jk-card-stroke px-3 py-2 text-[14px] text-jk-text-strong placeholder:text-jk-text-placeholder focus:border-jk-blue focus:outline-none bg-white transition-colors"
           />
           {items.length > 1 && (
             <button type="button" onClick={() => remove(i)} className="text-jk-text-muted hover:text-rose-500 transition-colors active:scale-95">
@@ -467,7 +467,7 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
           <SectionHeader title="경력" optional />
           <div className="flex flex-col gap-5">
             {form.career.map((c, ci) => (
-              <div key={ci} className="rounded-[12px] border border-jk-border bg-white p-4 flex flex-col gap-4">
+              <div key={ci} className="rounded-md border border-jk-card-stroke bg-white p-4 flex flex-col gap-4">
                 {/* 헤더 */}
                 <div className="flex items-center justify-between">
                   <p className="text-[14px] font-bold text-jk-text-strong">
@@ -581,7 +581,7 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
           <SectionHeader title="학력" optional />
           <div className="flex flex-col gap-4">
             {form.education.map((e, ei) => (
-              <div key={ei} className="rounded-[12px] border border-jk-border bg-white p-4 flex flex-col gap-4">
+              <div key={ei} className="rounded-md border border-jk-card-stroke bg-white p-4 flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <p className="text-[14px] font-bold text-jk-text-strong">
                     {e.school || `학력 ${ei + 1}`}
@@ -622,7 +622,7 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
         <div className="mt-6">
           <SectionHeader title="보유기술" optional />
           <div
-            className="min-h-[52px] w-full rounded-[10px] border border-jk-border bg-white px-3 py-2.5 flex flex-wrap gap-1.5 cursor-text"
+            className="min-h-[52px] w-full rounded-[10px] border border-jk-card-stroke bg-white px-3 py-2.5 flex flex-wrap gap-1.5 cursor-text"
             onClick={() => skillInputRef.current?.focus()}
           >
             {form.skills.map((skill) => (
@@ -745,7 +745,7 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
         {!isNew && (
           <Link
             href={`/resume/${id}/preview`}
-            className="flex items-center gap-1.5 rounded-full border border-jk-border px-4 py-3 text-[14px] font-semibold text-jk-text-muted transition-all active:scale-[0.98] hover:border-jk-blue hover:text-jk-blue shrink-0"
+            className="flex items-center gap-1.5 rounded-full border border-jk-card-stroke px-4 py-3 text-[14px] font-semibold text-jk-text-muted transition-all active:scale-[0.98] hover:border-jk-blue hover:text-jk-blue shrink-0"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <ellipse cx="8" cy="8" rx="7" ry="5" stroke="currentColor" strokeWidth="1.4"/>
@@ -757,7 +757,7 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
         <button
           type="button"
           onClick={handleTempSave}
-          className="flex-1 rounded-full border border-jk-border py-3 text-[15px] font-semibold text-jk-text-strong transition-all active:scale-[0.98] hover:border-jk-blue hover:text-jk-blue"
+          className="flex-1 rounded-full border border-jk-card-stroke py-3 text-[15px] font-semibold text-jk-text-strong transition-all active:scale-[0.98] hover:border-jk-blue hover:text-jk-blue"
         >
           {saveStatus === "saved" ? "저장됨 ✓" : "임시저장"}
         </button>

@@ -55,7 +55,7 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
       </div>
 
       {/* Re-engagement 하이라이트 */}
-      <section className="overflow-hidden rounded-[18px] bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+      <section className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
         <div className="px-4 pt-4 pb-2">
           <p className="text-[15px] font-bold text-jk-text-strong">{reEngagement?.headline}</p>
         </div>
@@ -91,7 +91,7 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
           {(matchedJobs ?? [])
             .filter((j: any) => j.isScraped && j.isUrgent)
             .map((job: any) => (
-              <div key={job.id} className="rounded-[16px] border border-rose-100 bg-white p-4">
+              <div key={job.id} className="rounded-lg border border-rose-100 bg-white p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-xs font-medium text-jk-text-muted">{job.company}</p>
@@ -118,7 +118,7 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
           </h2>
         </div>
         {(matchedJobs ?? []).filter((j: any) => !j.isScraped || !j.isUrgent).length === 0 ? (
-          <div className="flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
+          <div className="flex flex-col items-center gap-2 rounded-lg bg-white py-10 border border-jk-card-stroke">
             <span className="text-3xl">📋</span>
             <p className="text-sm font-semibold text-jk-text-strong">이력서를 업데이트하면 공고가 생겨요</p>
             <p className="text-xs text-jk-text-muted">조건에 맞는 공고를 다시 찾아드릴게요</p>

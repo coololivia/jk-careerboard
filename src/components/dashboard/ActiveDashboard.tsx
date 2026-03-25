@@ -76,7 +76,7 @@ export default function ActiveDashboard({ data }: Props) {
       {statsCards && (
         <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden">
           {/* 이력서 합격률 */}
-          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-[18px] bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
             <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <rect x="1.5" y="1.5" width="17" height="17" rx="4" stroke="#1b55f6" strokeWidth="1.6"/>
@@ -93,7 +93,7 @@ export default function ActiveDashboard({ data }: Props) {
           </div>
 
           {/* 서류통과 */}
-          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-[18px] bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
             <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-section">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <rect x="2.5" y="6" width="15" height="11.5" rx="2" stroke="#768091" strokeWidth="1.6"/>
@@ -111,7 +111,7 @@ export default function ActiveDashboard({ data }: Props) {
           </div>
 
           {/* 면접 준비 */}
-          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-[18px] bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
             <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M2.5 4.5A2 2 0 014.5 2.5h11A2 2 0 0117.5 4.5v7.5A2 2 0 0115.5 14H11l-3.5 3.5V14H4.5A2 2 0 012.5 12V4.5z" stroke="#1b55f6" strokeWidth="1.6" strokeLinejoin="round"/>
@@ -128,7 +128,7 @@ export default function ActiveDashboard({ data }: Props) {
 
           {/* 커리어 스코어 */}
           {careerScore && (
-            <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-[18px] bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+            <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
               <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-1.01L10 2z" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
@@ -169,7 +169,7 @@ export default function ActiveDashboard({ data }: Props) {
           subtitle={totalApplications > 0 ? `${totalApplications}개의 지원내역이 있어요` : undefined}
         />
         {totalApplications === 0 ? (
-          <div className="flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
+          <div className="flex flex-col items-center gap-2 rounded-lg bg-white py-10 border border-jk-card-stroke">
             <span className="text-3xl">📮</span>
             <p className="text-sm font-semibold text-jk-text-strong">아직 지원한 공고가 없어요</p>
             <p className="text-xs text-jk-text-muted">아래 맞춤 공고에서 바로 지원해보세요</p>
@@ -179,7 +179,7 @@ export default function ActiveDashboard({ data }: Props) {
           {(applicationList ?? []).map((app: any) => (
             <div
               key={app.id}
-              className="card-tap rounded-[12px] bg-white border border-[#E8E9EC] overflow-hidden"
+              className="card-tap rounded-md bg-white border border-jk-card-stroke overflow-hidden"
             >
               <div className="flex items-center justify-between px-4 pt-4">
                 <div className="flex items-center gap-2">
@@ -209,12 +209,12 @@ export default function ActiveDashboard({ data }: Props) {
                 </Link>
               </div>
 
-              <div className="mx-4 h-px bg-[#F1F2F3]" />
+              <div className="mx-4 h-px bg-jk-divider" />
               <div className="flex items-center gap-1 px-3 py-1.5">
                 {(app.actions as string[]).map((action: string, idx: number) => (
                   <React.Fragment key={action}>
-                    {idx > 0 && <div className="w-px h-5 shrink-0 bg-[#F1F2F3]" />}
-                    <button className="flex-1 h-10 rounded-[8px] text-[13px] font-medium text-[#AFB5BE] transition-all active:bg-jk-bg active:opacity-80 text-center">
+                    {idx > 0 && <div className="w-px h-5 shrink-0 bg-jk-divider" />}
+                    <button className="flex-1 h-10 rounded-sm text-[13px] font-medium text-jk-text-disabled transition-all active:bg-jk-bg active:opacity-80 text-center">
                       {action}
                     </button>
                   </React.Fragment>
@@ -241,7 +241,7 @@ export default function ActiveDashboard({ data }: Props) {
         {insight && <InsightCard data={insight} bordered />}
 
         {(matchedJobs ?? []).length === 0 ? (
-          <div className="mt-3 flex flex-col items-center gap-2 rounded-[16px] bg-white py-10 border border-jk-border">
+          <div className="mt-3 flex flex-col items-center gap-2 rounded-lg bg-white py-10 border border-jk-card-stroke">
             <span className="text-3xl">📭</span>
             <p className="text-sm font-semibold text-jk-text-strong">현재 조건에 맞는 공고가 없어요</p>
             <p className="text-xs text-jk-text-muted">이력서를 업데이트하면 더 많은 공고를 볼 수 있어요</p>

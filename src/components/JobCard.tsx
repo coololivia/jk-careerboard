@@ -146,8 +146,8 @@ export default function JobCard({ job, ctaLabel = "바로 지원", bordered }: P
   const dday = calcDday(job.deadline);
 
   const containerClass = bordered
-    ? "card-tap rounded-[12px] border border-[#E8E9EC] bg-white p-4"
-    : "card-tap py-4 border-b border-[#F1F2F3]";
+    ? "card-tap rounded-md border border-jk-card-stroke bg-white p-4"
+    : "card-tap py-4 border-b border-jk-divider";
 
   return (
     <>
@@ -196,7 +196,7 @@ export default function JobCard({ job, ctaLabel = "바로 지원", bordered }: P
               ) : (
                 <span
                   key={tag}
-                  className="rounded-full bg-[#F1F2F3] px-2.5 py-1 text-[12px] text-[#575f6c]"
+                  className="rounded-full bg-jk-divider px-2.5 py-1 text-[12px] text-jk-text-tertiary"
                 >
                   {tag}
                 </span>

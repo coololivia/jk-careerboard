@@ -34,7 +34,7 @@ interface Props {
 export default function InsightCard({ data, bordered }: Props) {
   if (!data) return null;
 
-  const cardClass = `rounded-[18px] bg-white p-5 ${bordered ? "border border-jk-border" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
+  const cardClass = `rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
 
   /* ── 연봉 시장 현황 (passive) ── */
   if (data.type === "market_salary") {
@@ -52,7 +52,7 @@ export default function InsightCard({ data, bordered }: Props) {
           {(data.rows ?? []).map((row, i) => (
             <div
               key={i}
-              className={`flex items-center justify-between rounded-[12px] px-4 py-3 ${
+              className={`flex items-center justify-between rounded-md px-4 py-3 ${
                 row.highlight
                   ? "bg-jk-blue"
                   : "bg-jk-bg"
@@ -114,7 +114,7 @@ export default function InsightCard({ data, bordered }: Props) {
         ))}
       </div>
 
-      <div className="mt-4 flex items-center justify-between rounded-[12px] bg-jk-bg px-4 py-3">
+      <div className="mt-4 flex items-center justify-between rounded-md bg-jk-bg px-4 py-3">
         <p className="text-xs text-jk-text-muted">
           내가 충족한 항목{" "}
           <span className="font-bold text-jk-text-strong">{fulfilled}/{total}</span>

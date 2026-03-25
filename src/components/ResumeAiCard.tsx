@@ -24,7 +24,7 @@ export default function ResumeAiCard({ resume }: Props) {
   const passStyle = passRateStyle(resume.passRate);
 
   return (
-    <div className="card-tap rounded-[12px] bg-white p-4 border border-[#E8E9EC]">
+    <div className="card-tap rounded-md bg-white p-4 border border-jk-card-stroke">
 
       {/* 1열 — 타이틀 · 신입/경력 · 최종 작성일 */}
       <div className="flex items-center justify-between gap-2">
@@ -40,7 +40,7 @@ export default function ResumeAiCard({ resume }: Props) {
       </div>
 
       {/* 디바이더 */}
-      <div className="my-3 h-px bg-[#F1F2F3]" />
+      <div className="my-3 h-px bg-jk-divider" />
 
       {/* 2열 — 완성도 | 합격예측 */}
       <div className="grid grid-cols-2">
@@ -65,7 +65,7 @@ export default function ResumeAiCard({ resume }: Props) {
         </p>
         <Link
           href={`/resume/${resume.id}`}
-          className="shrink-0 flex items-center justify-center h-10 rounded-[8px] bg-jk-bg px-4 text-[13px] font-semibold text-jk-text-strong transition-all active:scale-95"
+          className="shrink-0 flex items-center justify-center h-10 rounded-sm bg-jk-bg px-4 text-[13px] font-semibold text-jk-text-strong transition-all active:scale-95"
         >
           이력서 편집
         </Link>
