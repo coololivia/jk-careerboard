@@ -25,7 +25,7 @@ export default function ResumeAiCard({ resume, showApplyButton = true }: Props) 
   const passStyle = passRateStyle(resume.passRate);
 
   return (
-    <div className="card-tap rounded-[16px] bg-white p-4 border border-jk-border">
+    <div className="card-tap rounded-[12px] bg-white p-4 border border-[#E8E9EC]">
 
       {/* 1열 — 타이틀 · 신입/경력 · 최종 작성일 */}
       <div className="flex items-center justify-between gap-2">
@@ -41,7 +41,7 @@ export default function ResumeAiCard({ resume, showApplyButton = true }: Props) 
       </div>
 
       {/* 디바이더 */}
-      <div className="my-3 h-px bg-jk-border" />
+      <div className="my-3 h-px bg-[#F1F2F3]" />
 
       {/* 2열 — 완성도 | 합격예측 */}
       <div className="grid grid-cols-2">
