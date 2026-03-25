@@ -6,11 +6,11 @@ import PassiveDashboard from "@/components/dashboard/PassiveDashboard";
 import InactiveDashboard from "@/components/dashboard/InactiveDashboard";
 import OnboardingDashboard from "@/components/dashboard/OnboardingDashboard";
 
-import activeUser from "../../mock-data/active-user.json";
-import passiveUser from "../../mock-data/passive-user.json";
-import newUser from "../../mock-data/new-user.json";
-import inactiveUser from "../../mock-data/inactive-user.json";
-import onboardingUser from "../../mock-data/onboarding-user.json";
+import activeUser from "../../../mock-data/active-user.json";
+import passiveUser from "../../../mock-data/passive-user.json";
+import newUser from "../../../mock-data/new-user.json";
+import inactiveUser from "../../../mock-data/inactive-user.json";
+import onboardingUser from "../../../mock-data/onboarding-user.json";
 
 const mockDataMap: Record<UserType, UserData> = {
   active: activeUser as unknown as UserData,

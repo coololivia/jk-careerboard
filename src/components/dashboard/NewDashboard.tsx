@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
 import CareerScoreCard from "@/components/CareerScoreCard";
@@ -107,8 +108,9 @@ export default function NewDashboard({ data }: Props) {
 
       {/* 내 이력서 링크바 */}
       <div className="flex items-center gap-3">
-        <div
-          className="flex-1 rounded-full bg-white px-4 py-3 shadow-[0_1px_4px_rgba(0,0,0,0.06)]"
+        <Link
+          href="/resume"
+          className="card-tap flex-1 rounded-full bg-white px-4 py-3 shadow-[0_1px_4px_rgba(0,0,0,0.06)]"
           style={{
             background: "linear-gradient(white,white) padding-box, linear-gradient(90deg,#DEE0FFCC 0%,#6D79FFCC 17%,#BF47FFCC 53%,#FF9334CC 78%,#FFDFC2CC 100%) border-box",
             border: "1px solid transparent",
@@ -123,12 +125,15 @@ export default function NewDashboard({ data }: Props) {
               </svg>
             </div>
           </div>
-        </div>
-        <button className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-jk-blue shadow-[0_4px_12px_rgba(27,85,246,0.35)] transition-all active:scale-95">
+        </Link>
+        <Link
+          href="/resume/new"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-jk-blue shadow-[0_4px_12px_rgba(27,85,246,0.35)] transition-all active:scale-95 hover:bg-jk-blue-hover"
+        >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M10 4v12M4 10h12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
           </svg>
-        </button>
+        </Link>
       </div>
 
       {/* Skill Gap */}

@@ -1,0 +1,96 @@
+[
+  {
+    "id": "resume-1",
+    "name": "경력 개발자_v2.pdf",
+    "type": "경력",
+    "isRepresentative": true,
+    "status": "작성완료",
+    "statusDate": "2025.09.11",
+    "completeness": 92,
+    "passRate": 78,
+    "tip": {
+      "icon": "⚡",
+      "text": "프로젝트 성과 수치 추가 시 합격률 12%↑",
+      "color": "amber"
+    },
+    "recentApplications": ["카카오 프론트엔드 개발자", "토스 Product Engineer"],
+    "basicInfo": {
+      "name": "김지현",
+      "phone": "010-1234-5678",
+      "email": "jihyun.kim@email.com",
+      "birthdate": "1995.03.15",
+      "address": "서울시 강남구",
+      "desiredJob": "프론트엔드 개발자",
+      "introduction": "5년간의 프론트엔드 개발 경험을 바탕으로, 사용자 중심의 제품을 만드는 개발자입니다. React와 TypeScript를 주력으로 사용하며, 팀 내 코드 리뷰 문화 정착과 성능 최적화를 이끌어 왔습니다."
+    },
+    "coreValues": ["사용자 중심 사고", "지속적인 학습", "팀워크"],
+    "education": [
+      {
+        "school": "한국대학교",
+        "major": "컴퓨터공학과",
+        "degree": "학사",
+        "period": "2013.03 ~ 2017.02"
+      }
+    ],
+    "career": [
+      {
+        "company": "네이버 주식회사",
+        "period": "2020.03 ~ 2025.08",
+        "position": "프론트엔드 개발자",
+        "industry": "IT/인터넷",
+        "companySize": "대기업(1000명 이상)",
+        "projects": [
+          {
+            "name": "네이버 쇼핑 리뉴얼",
+            "period": "2023.06 ~ 2024.02",
+            "description": "네이버 쇼핑 메인 페이지 전면 리뉴얼 프로젝트",
+            "roles": ["React 기반 컴포넌트 설계 및 개발", "퍼포먼스 최적화 (LCP 40% 개선)", "디자인 시스템 구축"],
+            "achievements": ["페이지 로드 속도 2.1초 → 1.2초 단축", "전환율 18% 향상", "재사용 컴포넌트 60개 이상 설계"],
+            "competencies": ["React", "TypeScript", "Performance Optimization"]
+          },
+          {
+            "name": "모바일 웹 접근성 개선",
+            "period": "2022.01 ~ 2022.06",
+            "description": "WCAG 2.1 AA 기준 접근성 개선 작업",
+            "roles": ["접근성 감사 및 개선 작업", "스크린 리더 호환성 테스트"],
+            "achievements": ["접근성 점수 52점 → 91점 향상"],
+            "competencies": ["Accessibility", "ARIA", "Semantic HTML"]
+          }
+        ]
+      }
+    ],
+    "skills": ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL", "Git"],
+    "awards": ["2023 네이버 해커톤 우수상", "정보처리기사 (2017)"],
+    "portfolio": ["https://github.com/jihyun-kim", "https://jihyun.dev"]
+  },
+  {
+    "id": "resume-2",
+    "name": "신입 개발자_v1.pdf",
+    "type": "신입",
+    "isRepresentative": false,
+    "status": "작성중",
+    "statusDate": "2025.10.22",
+    "completeness": 38,
+    "passRate": 31,
+    "tip": {
+      "icon": "💡",
+      "text": "학력 및 프로젝트 경험을 추가하면 합격률이 올라요",
+      "color": "blue"
+    },
+    "basicInfo": {
+      "name": "김지현",
+      "phone": "010-1234-5678",
+      "email": "jihyun.kim@email.com",
+      "birthdate": "",
+      "address": "",
+      "desiredJob": "",
+      "introduction": ""
+    },
+    "coreValues": [],
+    "education": [],
+    "career": [],
+    "skills": [],
+    "awards": [],
+    "portfolio": []
+  }
+]
