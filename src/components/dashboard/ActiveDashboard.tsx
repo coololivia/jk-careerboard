@@ -178,7 +178,8 @@ export default function ActiveDashboard({ data }: Props) {
                 <p className="mt-0.5 text-xs text-jk-text-muted">{app.location}</p>
               </div>
 
-              <div className="flex items-center border-t border-[#F1F2F3] px-4">
+              <div className="mx-4 h-px bg-[#F1F2F3]" />
+              <div className="flex items-center px-4">
                 {(app.actions as string[]).map((action: string, idx: number) => (
                   <React.Fragment key={action}>
                     {idx > 0 && <div className="w-px h-[18px] shrink-0 bg-[#F1F2F3]" />}
