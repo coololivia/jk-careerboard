@@ -59,6 +59,9 @@ export default function ActiveDashboard({ data }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
+      <p className="pt-1 text-sm text-jk-text-muted">
+        지금 <span className="font-bold text-jk-blue">{totalApplications}개 공고</span>에 지원 중이에요
+      </p>
 
       {/* Stats Cards — 가로 스와이프 */}
       {statsCards && (

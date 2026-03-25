@@ -48,6 +48,8 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
+      <p className="pt-1 text-sm text-jk-text-muted">{subtitle}</p>
+
       {/* Re-engagement 하이라이트 */}
       <section className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
         <div className="px-4 pt-4 pb-2">

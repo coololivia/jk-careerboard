@@ -26,6 +26,7 @@ export default function OnboardingDashboard({ data }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
+      <p className="pt-1 text-sm text-jk-text-muted">내 커리어 서비스에 처음 오셨군요</p>
 
       {/* 온보딩 진행 카드 */}
       <section className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
