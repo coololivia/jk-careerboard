@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
+import ResumeLinkBar from "@/components/ResumeLinkBar";
 
 interface Props {
   data: UserData;
@@ -80,39 +80,7 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
       <div data-header-sentinel className="-mx-4 bg-white px-4 pt-6 pb-8 flex flex-col gap-7">
 
       {/* 내 이력서 링크바 */}
-      <div className="flex items-center gap-3">
-        <Link
-          href="/resume"
-          className="card-tap flex-1 rounded-full bg-white px-4 py-3 shadow-[0_1px_4px_rgba(0,0,0,0.06)]"
-          style={{
-            background: "linear-gradient(white,white) padding-box, linear-gradient(90deg,#DEE0FFCC 0%,#6D79FFCC 17%,#BF47FFCC 53%,#FF9334CC 78%,#FFDFC2CC 100%) border-box",
-            border: "1px solid transparent",
-          }}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <p className="text-[15px] font-semibold text-jk-text-strong">내 이력서 ({resumeCount ?? 0})</p>
-              {reEngagement?.resumeNudge && (
-                <span className="rounded-full bg-jk-blue px-2 py-0.5 text-[10px] font-bold text-white">업데이트 필요</span>
-              )}
-            </div>
-            <div className="flex items-center gap-0.5">
-              <p className="text-[11px] text-jk-text-muted">이력서 관리하기</p>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M6.5 4.5L11.5 9l-5 4.5" stroke="#1a1a1e" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          </div>
-        </Link>
-        <Link
-          href="/resume/new"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-jk-blue shadow-[0_4px_12px_rgba(27,85,246,0.35)] transition-all active:scale-95 hover:bg-jk-blue-hover"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M10 4v12M4 10h12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </Link>
-      </div>
+      <ResumeLinkBar count={resumeCount ?? 0} showUpdateBadge={!!reEngagement?.resumeNudge} />
 
       {/* 스크랩 마감 임박 — short/mid 티어만 노출 */}
       {showScrapUrgent && (matchedJobs ?? []).filter((j: any) => j.isScraped && j.isUrgent).length > 0 && (
