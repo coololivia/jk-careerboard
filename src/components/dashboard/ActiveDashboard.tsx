@@ -1,3 +1,4 @@
+import React from "react";
 import { UserData } from "@/types/user";
 import JobCard from "@/components/JobCard";
 import InsightCard from "@/components/InsightCard";
@@ -154,9 +155,9 @@ export default function ActiveDashboard({ data }: Props) {
           {(applicationList ?? []).map((app: any) => (
             <div
               key={app.id}
-              className="card-tap rounded-[16px] bg-white p-4 border border-jk-border"
+              className="card-tap rounded-[12px] bg-white border border-[#E8E9EC] overflow-hidden"
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between px-4 pt-4">
                 <div className="flex items-center gap-2">
                   <p className="text-[15px] font-bold text-jk-text-strong">{app.company}</p>
                   <span
@@ -170,25 +171,21 @@ export default function ActiveDashboard({ data }: Props) {
                 <p className="text-[11px] text-jk-text-muted">{app.appliedAt}</p>
               </div>
 
-              <div className="mt-2">
+              <div className="mt-2 px-4 pb-4">
                 <p className="text-sm text-jk-blue underline decoration-jk-blue/40 underline-offset-2">
                   {app.resumeName}
                 </p>
                 <p className="mt-0.5 text-xs text-jk-text-muted">{app.location}</p>
               </div>
 
-              <div className="mt-3 flex gap-2 border-t border-jk-border pt-3">
-                {(app.actions as string[]).map((action: string) => (
-                  <button
-                    key={action}
-                    className={`flex-1 rounded-full py-2 text-sm font-semibold transition-all active:scale-95 ${
-                      action === "재지원"
-                        ? "bg-jk-blue text-white"
-                        : "bg-jk-bg text-jk-text-secondary"
-                    }`}
-                  >
-                    {action}
-                  </button>
+              <div className="flex border-t border-[#F1F2F3]">
+                {(app.actions as string[]).map((action: string, idx: number) => (
+                  <React.Fragment key={action}>
+                    {idx > 0 && <div className="w-px bg-[#F1F2F3]" />}
+                    <button className="flex-1 py-3 text-[13px] font-medium text-jk-text-secondary transition-all active:opacity-60 text-center">
+                      {action}
+                    </button>
+                  </React.Fragment>
                 ))}
               </div>
             </div>
