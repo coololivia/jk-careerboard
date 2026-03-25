@@ -59,18 +59,6 @@ export default function ActiveDashboard({ data }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
-      {/* 인사말 */}
-      <div className="pt-1">
-        <p className="text-sm text-jk-text-muted">안녕하세요,</p>
-        <h1 className="mt-0.5 text-2xl font-bold tracking-tight text-jk-text-strong">
-          {user.name}님 👋
-        </h1>
-        <p className="mt-1.5 text-sm text-jk-text-muted">
-          지금{" "}
-          <span className="font-bold text-jk-blue">{totalApplications}개 공고</span>
-          에 지원 중이에요
-        </p>
-      </div>
 
       {/* Stats Cards — 가로 스와이프 */}
       {statsCards && (

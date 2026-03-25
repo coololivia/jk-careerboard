@@ -24,12 +24,6 @@ export default function PassiveDashboard({ data }: Props) {
 
   return (
     <div className="animate-page flex flex-col gap-7">
-      {/* 헤더 */}
-      <div className="pt-1">
-        <p className="text-sm text-jk-text-muted">안녕하세요,</p>
-        <h1 className="mt-0.5 text-2xl font-bold tracking-tight text-jk-text-strong">{user.name}님 👋</h1>
-        <p className="mt-1.5 text-sm text-jk-text-muted">조건 맞는 공고 나오면 바로 알려드릴게요</p>
-      </div>
 
       {/* Push 알림 CTA */}
       {!(data as any).pushNotificationConsent && (
