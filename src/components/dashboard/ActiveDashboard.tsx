@@ -67,71 +67,73 @@ export default function ActiveDashboard({ data }: Props) {
       {statsCards && (
         <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden">
           {/* 이력서 합격률 */}
-          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
+          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+            <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
+              내 이력서의<br />합격률 높이세요!
+            </p>
+            <div className="flex items-center justify-between w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <rect x="1.5" y="1.5" width="17" height="17" rx="4" stroke="#1b55f6" strokeWidth="1.6"/>
                 <path d="M5.5 10l3 3 5-5.5" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </div>
-            <div className="mt-4">
-              <p className="text-[12px] font-medium leading-snug text-jk-text-muted">내 이력서<br />합격률</p>
-              <p className="mt-1.5 text-[28px] font-bold leading-none text-jk-text-strong">
+              <p className="text-[24px] font-bold leading-none text-jk-text-strong">
                 {statsCards.resumeScore.current}
-                <span className="text-base font-medium text-jk-text-muted">/{statsCards.resumeScore.total}</span>
+                <span className="text-[14px] font-medium text-jk-text-muted">/{statsCards.resumeScore.total}</span>
               </p>
             </div>
           </div>
 
           {/* 서류통과 */}
-          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-section">
+          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+            <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
+              {statsCards.passedCompanies.companyCount}개 회사<br />서류통과 완료
+            </p>
+            <div className="flex items-center justify-between w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <rect x="2.5" y="6" width="15" height="11.5" rx="2" stroke="#768091" strokeWidth="1.6"/>
                 <path d="M6.5 6V5a3.5 3.5 0 017 0v1" stroke="#768091" strokeWidth="1.6" strokeLinecap="round"/>
                 <path d="M6.5 11h7M6.5 14h5" stroke="#768091" strokeWidth="1.4" strokeLinecap="round"/>
               </svg>
-            </div>
-            <div className="mt-4">
-              <p className="text-[12px] font-medium leading-snug text-jk-text-muted">서류통과<br />{statsCards.passedCompanies.companyCount}개 회사</p>
-              <p className="mt-1.5 text-[28px] font-bold leading-none text-jk-text-strong">
+              <p className="text-[24px] font-bold leading-none text-jk-text-strong">
                 {statsCards.passedCompanies.count}
-                <span className="text-base font-medium text-jk-text-muted">건</span>
+                <span className="text-[14px] font-medium text-jk-text-muted">건</span>
               </p>
             </div>
           </div>
 
           {/* 면접 준비 */}
-          <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
+          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+            <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
+              면접 준비<br />도와드려요
+            </p>
+            <div className="flex items-center justify-between w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M2.5 4.5A2 2 0 014.5 2.5h11A2 2 0 0117.5 4.5v7.5A2 2 0 0115.5 14H11l-3.5 3.5V14H4.5A2 2 0 012.5 12V4.5z" stroke="#1b55f6" strokeWidth="1.6" strokeLinejoin="round"/>
+                <path d="M2.5 4.5A2 2 0 014.5 2.5h11A2 2 0 0117.5 4.5v7.5A2 2 0 0115.5 14H11l-3.5 3.5V14H4.5A2 2 0 012.5 12V4.5z" stroke="#768091" strokeWidth="1.6" strokeLinejoin="round"/>
               </svg>
-            </div>
-            <div className="mt-4">
-              <p className="text-[12px] font-medium leading-snug text-jk-text-muted">면접 준비<br />도와드려요</p>
-              <p className="mt-1.5 text-[28px] font-bold leading-none text-jk-text-strong">
+              <p className="text-[24px] font-bold leading-none text-jk-text-strong">
                 {statsCards.interviewCount.count}
-                <span className="text-base font-medium text-jk-text-muted">개</span>
+                <span className="text-[14px] font-medium text-jk-text-muted">개</span>
               </p>
             </div>
           </div>
 
           {/* 커리어 스코어 */}
           {careerScore && (
-            <div className="card-tap snap-start shrink-0 w-[160px] flex flex-col justify-between rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
-              <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-jk-bg-blue">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-1.01L10 2z" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="mt-4">
-                <p className="text-[12px] font-medium leading-snug text-jk-text-muted">커리어<br />스코어</p>
-                <p className="mt-1.5 text-[28px] font-bold leading-none text-jk-text-strong">
-                  {careerScore.score}
-                  <span className="text-base font-medium text-jk-text-muted">/100</span>
-                </p>
-                <p className="mt-1 text-[11px] font-semibold text-jk-blue">{careerScore.marketComparison}</p>
+            <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+              <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
+                커리어<br />스코어
+              </p>
+              <div className="flex flex-col gap-0.5 w-full">
+                <div className="flex items-center justify-between w-full">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-1.01L10 2z" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <p className="text-[24px] font-bold leading-none text-jk-text-strong">
+                    {careerScore.score}
+                    <span className="text-[14px] font-medium text-jk-text-muted">/100</span>
+                  </p>
+                </div>
+                <p className="text-[11px] font-semibold text-jk-blue text-right">{careerScore.marketComparison}</p>
               </div>
             </div>
           )}
