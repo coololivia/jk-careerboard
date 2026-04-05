@@ -26,10 +26,10 @@ export default function OnboardingDashboard({ data }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
-      <p className="pt-1 text-sm text-jk-text-muted">내 커리어 서비스에 처음 오셨군요</p>
+      <p className="-mt-1 text-[16px] text-jk-text-muted">내 커리어 서비스에 처음 오셨군요</p>
 
       {/* 온보딩 진행 카드 */}
-      <section className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+      <section className="overflow-hidden rounded-xl bg-white shadow-card">
 
         {/* 카드 헤더 */}
         <div className="px-4 pt-4 pb-3">
@@ -135,16 +135,16 @@ export default function OnboardingDashboard({ data }: Props) {
 
             {/* 잠금 오버레이 */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-[0_2px_12px_rgba(0,0,0,0.12)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-card-strong">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="#1a1a1e" strokeWidth="1.8"/>
-                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="#1a1a1e" strokeWidth="1.8" strokeLinecap="round"/>
+                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="var(--color-jk-text-strong)" strokeWidth="1.8"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="var(--color-jk-text-strong)" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
               </div>
               <p className="text-sm font-bold text-jk-text-strong text-center">
                 설정 완료 후 맞춤 공고를 확인해요
               </p>
-              <button className="rounded-full bg-jk-blue px-5 py-2.5 text-sm font-bold text-white shadow-[0_2px_8px_rgba(27,85,246,0.3)] transition-all active:scale-95">
+              <button className="rounded-full bg-jk-blue px-5 py-2.5 text-sm font-bold text-white shadow-button-blue transition-all active:scale-95">
                 지금 설정하기
               </button>
             </div>

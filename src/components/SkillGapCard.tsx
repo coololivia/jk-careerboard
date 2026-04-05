@@ -51,7 +51,7 @@ function LevelBar({ current, required }: { current: string; required: string }) 
 export default function SkillGapCard({ skills, userType, targetJob, bordered }: Props) {
   if (!skills || skills.length === 0) return null;
 
-  const cardClass = `rounded-lg bg-white p-4 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
+  const cardClass = `rounded-lg bg-white p-4 ${bordered ? "border border-jk-card-stroke" : "shadow-card"}`;
 
   if (userType === "active") {
     return (

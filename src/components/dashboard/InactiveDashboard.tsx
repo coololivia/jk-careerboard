@@ -48,10 +48,10 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
-      <p className="pt-1 text-sm text-jk-text-muted">{subtitle}</p>
+      <p className="-mt-1 text-[16px] text-jk-text-muted">{subtitle}</p>
 
       {/* Re-engagement 하이라이트 */}
-      <section className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+      <section className="overflow-hidden rounded-xl bg-white shadow-card">
         <div className="px-4 pt-4 pb-2">
           <p className="text-[15px] font-bold text-jk-text-strong">{reEngagement?.headline}</p>
         </div>
@@ -66,7 +66,7 @@ export default function InactiveDashboard({ data, tierDaysOverride }: Props) {
           ))}
         </div>
         <div className="px-4 py-4">
-          <button className="w-full rounded-full bg-jk-blue py-3.5 text-sm font-bold text-white shadow-[0_2px_8px_rgba(27,85,246,0.3)]">
+          <button className="w-full rounded-full bg-jk-blue py-3.5 text-sm font-bold text-white shadow-button-blue">
             {reEngagement?.ctaMessage ?? "공고 보러 가기"}
           </button>
         </div>

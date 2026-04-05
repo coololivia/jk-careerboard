@@ -24,7 +24,7 @@ export default function NewDashboard({ data }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
-      <p className="pt-1 text-sm text-jk-text-muted">첫 취업까지 함께할게요</p>
+      <p className="-mt-1 text-[16px] text-jk-text-muted">첫 취업까지 함께할게요</p>
 
       {/* Career Score — 격려 프레이밍 */}
       <CareerScoreCard data={careerScore} userType="new" />

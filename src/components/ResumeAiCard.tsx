@@ -65,7 +65,7 @@ export default function ResumeAiCard({ resume }: Props) {
         </p>
         <Link
           href={`/resume/${resume.id}`}
-          className="shrink-0 flex items-center justify-center h-10 rounded-sm bg-jk-bg px-4 text-[13px] font-semibold text-jk-text-strong transition-all active:scale-95"
+          className="shrink-0 flex items-center justify-center h-10 rounded-sm bg-white border border-jk-border px-3 py-2 text-[14px] font-medium text-jk-text-strong transition-all active:scale-95"
         >
           이력서 편집
         </Link>

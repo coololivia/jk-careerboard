@@ -107,28 +107,16 @@ function ApplyBottomSheet({ job, onClose }: { job: Job; onClose: () => void }) {
   );
 }
 
-// ── BookmarkIcon ─────────────────────────────────────────────────────────────
+// ── ButtonScrap — JAMS 2.1 button-iconemoji.spec.json ────────────────────────
+// size: 24×24 / state: Off(gray outline) · On(yellow fill)
 
-function BookmarkIcon({ filled }: { filled: boolean }) {
-  return filled ? (
-    // filled amber star
+function ButtonScrap({ on }: { on: boolean }) {
+  return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-        fill="#F59E0B"
-        stroke="#F59E0B"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ) : (
-    // outline star
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-        fill="none"
-        stroke="#768091"
+        fill={on ? "var(--color-jk-yellow)" : "none"}
+        stroke={on ? "var(--color-jk-yellow)" : "var(--color-jk-text-placeholder)"}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -168,7 +156,7 @@ export default function JobCard({ job, ctaLabel = "바로 지원", bordered }: P
             }}
             aria-label={scraped ? "스크랩 해제" : "스크랩"}
           >
-            <BookmarkIcon filled={scraped} />
+            <ButtonScrap on={scraped} />
           </button>
         </div>
 

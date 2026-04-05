@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { UserData } from "@/types/user";
@@ -7,6 +8,7 @@ import SkillGapCard from "@/components/SkillGapCard";
 import CareerScoreCard from "@/components/CareerScoreCard";
 import ResumeAiSection from "@/components/ResumeAiSection";
 import ResumeLinkBar from "@/components/ResumeLinkBar";
+import { useDragScroll } from "@/hooks/useDragScroll";
 
 interface Props {
   data: UserData;
@@ -55,26 +57,34 @@ export default function ActiveDashboard({ data }: Props) {
   } = data as any;
 
   const totalApplications = (applicationList ?? []).length;
+  const dragScroll = useDragScroll();
 
   return (
-    <div className="animate-page flex flex-col gap-7">
+    <div className="animate-page flex flex-col gap-6">
 
-      <p className="pt-1 text-sm text-jk-text-muted">
+      <p className="-mt-1 text-[16px] text-jk-text-muted">
         지금 <span className="font-bold text-jk-blue">{totalApplications}개 공고</span>에 지원 중이에요
       </p>
 
       {/* Stats Cards — 가로 스와이프 */}
       {statsCards && (
-        <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden">
+        <div
+          ref={dragScroll.ref}
+          onMouseDown={dragScroll.onMouseDown}
+          onMouseUp={dragScroll.onMouseUp}
+          onMouseLeave={dragScroll.onMouseLeave}
+          onMouseMove={dragScroll.onMouseMove}
+          className="-mt-2 -mx-4 px-4 scroll-pl-4 flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden cursor-grab select-none"
+        >
           {/* 이력서 합격률 */}
-          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-md bg-white p-4 shadow-card">
             <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
               내 이력서의<br />합격률 높이세요!
             </p>
             <div className="flex items-center justify-between w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="1.5" y="1.5" width="17" height="17" rx="4" stroke="#1b55f6" strokeWidth="1.6"/>
-                <path d="M5.5 10l3 3 5-5.5" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                <rect x="1.5" y="1.5" width="17" height="17" rx="4" stroke="var(--color-jk-blue)" strokeWidth="1.6"/>
+                <path d="M5.5 10l3 3 5-5.5" stroke="var(--color-jk-blue)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               <p className="text-[24px] font-bold leading-none text-jk-text-strong">
                 {statsCards.resumeScore.current}
@@ -84,15 +94,15 @@ export default function ActiveDashboard({ data }: Props) {
           </div>
 
           {/* 서류통과 */}
-          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-md bg-white p-4 shadow-card">
             <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
               {statsCards.passedCompanies.companyCount}개 회사<br />서류통과 완료
             </p>
             <div className="flex items-center justify-between w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="2.5" y="6" width="15" height="11.5" rx="2" stroke="#768091" strokeWidth="1.6"/>
-                <path d="M6.5 6V5a3.5 3.5 0 017 0v1" stroke="#768091" strokeWidth="1.6" strokeLinecap="round"/>
-                <path d="M6.5 11h7M6.5 14h5" stroke="#768091" strokeWidth="1.4" strokeLinecap="round"/>
+                <rect x="2.5" y="6" width="15" height="11.5" rx="2" stroke="var(--color-jk-text-muted)" strokeWidth="1.6"/>
+                <path d="M6.5 6V5a3.5 3.5 0 017 0v1" stroke="var(--color-jk-text-muted)" strokeWidth="1.6" strokeLinecap="round"/>
+                <path d="M6.5 11h7M6.5 14h5" stroke="var(--color-jk-text-muted)" strokeWidth="1.4" strokeLinecap="round"/>
               </svg>
               <p className="text-[24px] font-bold leading-none text-jk-text-strong">
                 {statsCards.passedCompanies.count}
@@ -102,13 +112,13 @@ export default function ActiveDashboard({ data }: Props) {
           </div>
 
           {/* 면접 준비 */}
-          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
+          <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-md bg-white p-4 shadow-card">
             <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
               면접 준비<br />도와드려요
             </p>
             <div className="flex items-center justify-between w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M2.5 4.5A2 2 0 014.5 2.5h11A2 2 0 0117.5 4.5v7.5A2 2 0 0115.5 14H11l-3.5 3.5V14H4.5A2 2 0 012.5 12V4.5z" stroke="#768091" strokeWidth="1.6" strokeLinejoin="round"/>
+                <path d="M2.5 4.5A2 2 0 014.5 2.5h11A2 2 0 0117.5 4.5v7.5A2 2 0 0115.5 14H11l-3.5 3.5V14H4.5A2 2 0 012.5 12V4.5z" stroke="var(--color-jk-text-muted)" strokeWidth="1.6" strokeLinejoin="round"/>
               </svg>
               <p className="text-[24px] font-bold leading-none text-jk-text-strong">
                 {statsCards.interviewCount.count}
@@ -119,27 +129,22 @@ export default function ActiveDashboard({ data }: Props) {
 
           {/* 커리어 스코어 */}
           {careerScore && (
-            <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-xl bg-white p-4 shadow-[0_0_10px_0_rgba(0,0,0,0.07)]">
-              <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">
-                커리어<br />스코어
-              </p>
-              <div className="flex flex-col gap-0.5 w-full">
-                <div className="flex items-center justify-between w-full">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-1.01L10 2z" stroke="#1b55f6" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+            <div className="card-tap snap-start shrink-0 w-[136px] h-[136px] flex flex-col justify-between items-start rounded-md bg-white p-4 shadow-card">
+              <p className="text-[14px] font-semibold leading-snug text-jk-text-strong">커리어 스코어</p>
+              <div className="flex items-center justify-between w-full">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-1.01L10 2z" stroke="var(--color-jk-blue)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div className="text-right">
                   <p className="text-[24px] font-bold leading-none text-jk-text-strong">
-                    {careerScore.score}
-                    <span className="text-[14px] font-medium text-jk-text-muted">/100</span>
+                    {careerScore.score}<span className="text-[14px] font-medium text-jk-text-muted">/100</span>
                   </p>
+                  <p className="text-[11px] font-semibold text-jk-blue">{careerScore.marketComparison}</p>
                 </div>
-                <p className="text-[11px] font-semibold text-jk-blue text-right">{careerScore.marketComparison}</p>
               </div>
             </div>
           )}
 
-          {/* trailing spacer */}
-          <div className="shrink-0 w-px" />
         </div>
       )}
 
@@ -197,7 +202,7 @@ export default function ActiveDashboard({ data }: Props) {
               </div>
 
               <div className="px-4 pb-4">
-                <Link href={`/resume/${app.appliedResumeId}`} className="text-[13px] text-jk-blue underline decoration-jk-blue/40 underline-offset-2">
+                <Link href={`/resume/${app.appliedResumeId}`} className="text-[14px] font-medium text-jk-text-strong transition-all active:opacity-60">
                   {app.appliedResumeName}
                 </Link>
               </div>
@@ -207,7 +212,7 @@ export default function ActiveDashboard({ data }: Props) {
                 {(app.actions as string[]).map((action: string, idx: number) => (
                   <React.Fragment key={action}>
                     {idx > 0 && <div className="w-px h-5 shrink-0 bg-jk-divider" />}
-                    <button className="flex-1 h-10 rounded-sm text-[13px] font-medium text-jk-text-disabled transition-all active:bg-jk-bg active:opacity-80 text-center">
+                    <button className={`flex-1 h-10 rounded-sm text-[14px] font-medium transition-all active:bg-jk-bg text-center ${action === "재지원" ? "text-jk-blue" : "text-jk-text-strong"}`}>
                       {action}
                     </button>
                   </React.Fragment>

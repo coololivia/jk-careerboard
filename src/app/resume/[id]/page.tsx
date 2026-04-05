@@ -428,7 +428,7 @@ export default function ResumeFormPage({ params }: { params: Promise<{ id: strin
               <div key={i} className="flex items-center gap-2">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-jk-bg-blue">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 7l3 3 6-5.5" stroke="#1b55f6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2.5 7l3 3 6-5.5" stroke="var(--color-jk-blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <input

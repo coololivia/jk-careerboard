@@ -3,38 +3,47 @@
 
 @import "tailwindcss";
 
-/* 잡코리아 디자인 토큰 — JAMS 2.1 기준 */
+/* 잡코리아 디자인 토큰 — JAMS 2.1 primitives 기준 */
 @theme {
-  /* 배경 */
-  --color-jk-bg: #f3f4f5;
-  --color-jk-bg-section: #f1f2f3;
-  --color-jk-bg-blue: #f0f2fa;
+  /* 배경 — gray.50 / blue2.50 */
+  --color-jk-bg: #f4f6f7;        /* gray.50 */
+  --color-jk-bg-section: #f4f6f7; /* gray.50 */
+  --color-jk-bg-blue: #eef3ff;   /* blue2.50 */
 
-  /* 텍스트 */
-  --color-jk-text-primary: #1a1a1e;
-  --color-jk-text-strong: #1a1a1e;
-  --color-jk-text-secondary: #3e434b;
-  --color-jk-text-tertiary: #575f6c;
-  --color-jk-text-muted: #768091;
-  --color-jk-text-disabled: #afb5be;
-  --color-jk-text-placeholder: #949ba8;
+  /* 텍스트 — gray scale */
+  --color-jk-text-primary: #131618;  /* gray.950 */
+  --color-jk-text-strong: #131618;   /* gray.950 */
+  --color-jk-text-secondary: #484f56; /* gray.700 */
+  --color-jk-text-tertiary: #636c74;  /* gray.600 */
+  --color-jk-text-muted: #86919a;     /* gray.500 */
+  --color-jk-text-disabled: #b8bfc5;  /* gray.300 */
+  --color-jk-text-placeholder: #9ea8af; /* gray.400 */
 
-  /* 보더 */
-  --color-jk-border: #d5d8dc;
-  --color-jk-card-stroke: #e8e9ec;
-  --color-jk-divider: #f1f2f3;
+  /* 보더 — gray scale */
+  --color-jk-border: #d1d6da;     /* gray.200 */
+  --color-jk-card-stroke: #e2e6e8; /* gray.100 */
+  --color-jk-divider: #f4f6f7;    /* gray.50 */
 
-  /* 브랜드 블루 — JK 메인 컬러 */
-  --color-jk-blue: #1b55f6;
-  --color-jk-blue-hover: #083ccc;
-  --color-jk-blue-dark: #0028ad;
-  --color-jk-blue-light: #e1e7fa;
+  /* 브랜드 블루 — blue2 scale */
+  --color-jk-blue: #1b55f6;       /* blue2.500 */
+  --color-jk-blue-hover: #1240cc;  /* blue2.600 */
+  --color-jk-blue-dark: #0d2ea0;   /* blue2.700 */
+  --color-jk-blue-light: #d5e4ff;  /* blue2.100 */
 
-  /* 기타 */
+  /* 기타 — JAMS 외 커스텀 유지 */
   --color-jk-purple: #8b5cf6;
+  --color-jk-yellow: #ffbb00;    /* yellow.500 — 북마크 별 아이콘 */
 
   --color-white: #ffffff;
   --color-black: #000000;
+
+  /* 쉐도우 — JAMS 2.1 shadow primitives */
+  --shadow-card:        0px 4px 16px 0px rgba(0,0,0,0.07);  /* shadow.default */
+  --shadow-card-strong: 0px 4px 16px 0px rgba(0,0,0,0.12);  /* shadow.secondary */
+  --shadow-white:       0px 4px 20px 0px rgba(0,0,0,0.10);  /* shadow.white */
+  --shadow-up:          0px -2px 12px 0px rgba(0,0,0,0.12); /* shadow.up — 바텀시트 */
+  --shadow-button:      0px 0px 8px 0px rgba(0,0,0,0.10);   /* shadow.buttonsmall */
+  --shadow-button-blue: 0px 2px 12px 0px rgba(27,85,246,0.35); /* brand 버튼 glow */
 
   /* 타이포그래피 */
   --font-sans: "PretendardVariable", "Pretendard", -apple-system, BlinkMacSystemFont,

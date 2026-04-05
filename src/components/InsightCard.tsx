@@ -34,7 +34,7 @@ interface Props {
 export default function InsightCard({ data, bordered }: Props) {
   if (!data) return null;
 
-  const cardClass = `rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
+  const cardClass = `rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-card"}`;
 
   /* ── 연봉 시장 현황 (passive) ── */
   if (data.type === "market_salary") {

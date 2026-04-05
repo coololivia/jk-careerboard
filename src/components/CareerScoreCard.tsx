@@ -56,8 +56,8 @@ function Sparkline({ history }: { history: ScoreHistory[] }) {
   const [lx, ly] = points[points.length - 1].split(",").map(Number);
   return (
     <svg width={width} height={height} className="overflow-visible">
-      <polyline points={points.join(" ")} fill="none" stroke="#1b55f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx={lx} cy={ly} r="3" fill="#1b55f6" />
+      <polyline points={points.join(" ")} fill="none" stroke="var(--color-jk-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx={lx} cy={ly} r="3" fill="var(--color-jk-blue)" />
     </svg>
   );
 }
@@ -97,7 +97,7 @@ function CareerTimeline({ timeline }: { timeline: TimelineEvent[] }) {
 
 export default function CareerScoreCard({ data, timeline, userType, bordered }: Props) {
   const [showTimeline, setShowTimeline] = useState(false);
-  const cardClass = `rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`;
+  const cardClass = `rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-card"}`;
 
   // 신입: 시장 포지셔닝 프레이밍
   if (userType === "new") {
@@ -106,7 +106,7 @@ export default function CareerScoreCard({ data, timeline, userType, bordered }: 
     const projectedPct = Math.round((projectedScore / 100) * 100);
 
     return (
-      <section className={`rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-[0_2px_12px_rgba(0,0,0,0.07)]"}`}>
+      <section className={`rounded-xl bg-white p-5 ${bordered ? "border border-jk-card-stroke" : "shadow-card"}`}>
         <p className="text-xs font-medium text-jk-text-muted">커리어 스코어</p>
         <div className="mt-2 flex items-end justify-between">
           <div className="flex items-end gap-2">

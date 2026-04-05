@@ -22,7 +22,7 @@ export default function DevTypeSwitcher() {
   const currentTier = searchParams.get("tier") ?? "short";
 
   return (
-    <div className="bg-[#1a1a1e]">
+    <div className="bg-jk-text-strong">
       <div className="flex items-center gap-2 px-3 py-1.5">
         <span className="text-[10px] font-bold tracking-widest text-white/30 uppercase">DEV</span>
         <div className="flex flex-1 gap-1">

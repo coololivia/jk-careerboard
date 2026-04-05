@@ -177,7 +177,7 @@ export default function ResumePage() {
       {/* FAB — 이력서 새로 작성 */}
       <Link
         href="/resume/new"
-        className="fixed bottom-20 right-4 flex h-14 w-14 items-center justify-center rounded-full bg-jk-blue shadow-[0_4px_16px_rgba(27,85,246,0.4)] transition-all active:scale-95 hover:bg-jk-blue-hover z-20"
+        className="fixed bottom-20 right-4 flex h-14 w-14 items-center justify-center rounded-full bg-jk-blue shadow-button-blue transition-all active:scale-95 hover:bg-jk-blue-hover z-20"
         style={{ right: "max(1rem, calc((100vw - 390px) / 2 + 1rem))" }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

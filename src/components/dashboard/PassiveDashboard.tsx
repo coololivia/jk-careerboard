@@ -25,11 +25,11 @@ export default function PassiveDashboard({ data }: Props) {
   return (
     <div className="animate-page flex flex-col gap-7">
 
-      <p className="pt-1 text-sm text-jk-text-muted">조건 맞는 공고 나오면 바로 알려드릴게요</p>
+      <p className="-mt-1 text-[16px] text-jk-text-muted">조건 맞는 공고 나오면 바로 알려드릴게요</p>
 
       {/* Push 알림 CTA */}
       {!(data as any).pushNotificationConsent && (
-        <div className="overflow-hidden rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+        <div className="overflow-hidden rounded-xl bg-white shadow-card">
           <div className="flex items-start gap-3 p-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-jk-bg-blue text-xl">
               🔔

@@ -28,7 +28,7 @@ export default function StickyHeader() {
       }`}
     >
       <div className="flex h-14 items-center justify-between px-4">
-        <h1 className="text-[18px] font-bold tracking-tight text-[#0c0c0e]">내 커리어</h1>
+        <h1 className="text-[18px] font-bold tracking-tight text-jk-text-strong">내 커리어</h1>
         <div className="flex items-center">
           {/* 검색 */}
           <button className="flex h-10 w-10 items-center justify-center text-jk-text-strong">
